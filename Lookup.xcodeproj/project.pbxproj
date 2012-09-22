@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0643DE12627747E8A8A5A5CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D67A511F84F6E8A4D2A67 /* libPods.a */; };
+		DE02C3C1160E630A00BF6AAF /* libMUOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */; };
 		DEECD999160E247E00DDD752 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD998160E247E00DDD752 /* UIKit.framework */; };
 		DEECD99B160E247E00DDD752 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99A160E247E00DDD752 /* Foundation.framework */; };
 		DEECD99D160E247E00DDD752 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99C160E247E00DDD752 /* CoreGraphics.framework */; };
@@ -16,15 +17,16 @@
 		DEECD9A9160E247E00DDD752 /* LUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEECD9A8160E247E00DDD752 /* LUAppDelegate.m */; };
 		DEECD9AC160E247E00DDD752 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEECD9AA160E247E00DDD752 /* MainStoryboard.storyboard */; };
 		DEECD9AF160E247E00DDD752 /* LUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEECD9AE160E247E00DDD752 /* LUViewController.m */; };
-		DEECDA00160E41CC00DDD752 /* libMUOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD9FF160E41CC00DDD752 /* libMUOAuth2Client.a */; };
 		DEECDA03160E445400DDD752 /* Lookup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEECDA01160E445400DDD752 /* Lookup.xcdatamodeld */; };
 		DEECDA31160E460400DDD752 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECDA30160E460400DDD752 /* CoreData.framework */; };
 		DEF3269F160E5BF100A2AECA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEF3269D160E5BF100A2AECA /* Localizable.strings */; };
+		DEF326A4160E5F4A00A2AECA /* LULoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF326A3160E5F4A00A2AECA /* LULoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		005D67A511F84F6E8A4D2A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		376DB20CA1324F1CAF3CC628 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUOAuth2Client.a; path = "Vendor/MUOAuth2Client/build/Release-iphoneos/libMUOAuth2Client.a"; sourceTree = "<group>"; };
 		DEECD994160E247E00DDD752 /* Lookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEECD998160E247E00DDD752 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DEECD99A160E247E00DDD752 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,10 +40,11 @@
 		DEECD9AB160E247E00DDD752 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DEECD9AD160E247E00DDD752 /* LUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUViewController.h; sourceTree = "<group>"; };
 		DEECD9AE160E247E00DDD752 /* LUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUViewController.m; sourceTree = "<group>"; };
-		DEECD9FF160E41CC00DDD752 /* libMUOAuth2Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUOAuth2Client.a; path = "Vendor/MUOAuth2Client/build/Release-iphoneos/libMUOAuth2Client.a"; sourceTree = "<group>"; };
 		DEECDA02160E445400DDD752 /* Lookup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lookup.xcdatamodel; sourceTree = "<group>"; };
 		DEECDA30160E460400DDD752 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DEF3269E160E5BF100A2AECA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DEF326A2160E5F4A00A2AECA /* LULoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LULoginViewController.h; path = Controllers/LULoginViewController.h; sourceTree = SOURCE_ROOT; };
+		DEF326A3160E5F4A00A2AECA /* LULoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LULoginViewController.m; path = Controllers/LULoginViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,8 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE02C3C1160E630A00BF6AAF /* libMUOAuth2Client.a in Frameworks */,
 				DEECDA31160E460400DDD752 /* CoreData.framework in Frameworks */,
-				DEECDA00160E41CC00DDD752 /* libMUOAuth2Client.a in Frameworks */,
 				DEECD999160E247E00DDD752 /* UIKit.framework in Frameworks */,
 				DEECD99B160E247E00DDD752 /* Foundation.framework in Frameworks */,
 				DEECD99D160E247E00DDD752 /* CoreGraphics.framework in Frameworks */,
@@ -83,8 +86,8 @@
 		DEECD997160E247E00DDD752 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */,
 				DEECDA30160E460400DDD752 /* CoreData.framework */,
-				DEECD9FF160E41CC00DDD752 /* libMUOAuth2Client.a */,
 				DEECD998160E247E00DDD752 /* UIKit.framework */,
 				DEECD99A160E247E00DDD752 /* Foundation.framework */,
 				DEECD99C160E247E00DDD752 /* CoreGraphics.framework */,
@@ -96,11 +99,10 @@
 		DEECD99E160E247E00DDD752 /* Lookup */ = {
 			isa = PBXGroup;
 			children = (
+				DEF326A1160E5F1300A2AECA /* Controllers */,
 				DEECD9A7160E247E00DDD752 /* LUAppDelegate.h */,
 				DEECD9A8160E247E00DDD752 /* LUAppDelegate.m */,
 				DEECD9AA160E247E00DDD752 /* MainStoryboard.storyboard */,
-				DEECD9AD160E247E00DDD752 /* LUViewController.h */,
-				DEECD9AE160E247E00DDD752 /* LUViewController.m */,
 				DEECD99F160E247E00DDD752 /* Supporting Files */,
 			);
 			path = Lookup;
@@ -124,6 +126,17 @@
 				DEECDA01160E445400DDD752 /* Lookup.xcdatamodeld */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		DEF326A1160E5F1300A2AECA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DEECD9AD160E247E00DDD752 /* LUViewController.h */,
+				DEECD9AE160E247E00DDD752 /* LUViewController.m */,
+				DEF326A2160E5F4A00A2AECA /* LULoginViewController.h */,
+				DEF326A3160E5F4A00A2AECA /* LULoginViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +241,7 @@
 				DEECD9A9160E247E00DDD752 /* LUAppDelegate.m in Sources */,
 				DEECD9AF160E247E00DDD752 /* LUViewController.m in Sources */,
 				DEECDA03160E445400DDD752 /* Lookup.xcdatamodeld in Sources */,
+				DEF326A4160E5F4A00A2AECA /* LULoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +332,7 @@
 				GCC_PREFIX_HEADER = "Lookup/Lookup-Prefix.pch";
 				INFOPLIST_FILE = "Lookup/Lookup-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -330,6 +345,7 @@
 				GCC_PREFIX_HEADER = "Lookup/Lookup-Prefix.pch";
 				INFOPLIST_FILE = "Lookup/Lookup-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
