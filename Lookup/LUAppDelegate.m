@@ -15,7 +15,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+{    
     // Override point for customization after application launch.
     return YES;
 }
@@ -54,8 +54,16 @@
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            
+            NSAssert(error == nil, @"MOC Save Error -> %@", error);
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"UNEXPECTED_ERROR_TITLE", @"The alert view title when an error occurrs that is not expected.")
+                                                                message:NSLocalizedString(@"APPLICATION_MUST_CLOSE_MESSAGE", @"The alert view message when an unrecoverable error occurs and the application must close.")
+                                                               delegate:nil
+                                                      cancelButtonTitle:NSLocalizedString(@"CLOSE_BUTTON_TITLE", @"The title of an alert view button that indicates the application will quit after pressing the button.")
+                                                      otherButtonTitles:nil];
+            [alertView show];
+            
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }

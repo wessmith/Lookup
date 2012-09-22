@@ -19,6 +19,7 @@
 		DEECDA00160E41CC00DDD752 /* libMUOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD9FF160E41CC00DDD752 /* libMUOAuth2Client.a */; };
 		DEECDA03160E445400DDD752 /* Lookup.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEECDA01160E445400DDD752 /* Lookup.xcdatamodeld */; };
 		DEECDA31160E460400DDD752 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECDA30160E460400DDD752 /* CoreData.framework */; };
+		DEF3269F160E5BF100A2AECA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEF3269D160E5BF100A2AECA /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		DEECD9FF160E41CC00DDD752 /* libMUOAuth2Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUOAuth2Client.a; path = "Vendor/MUOAuth2Client/build/Release-iphoneos/libMUOAuth2Client.a"; sourceTree = "<group>"; };
 		DEECDA02160E445400DDD752 /* Lookup.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lookup.xcdatamodel; sourceTree = "<group>"; };
 		DEECDA30160E460400DDD752 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DEF3269E160E5BF100A2AECA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		DEECD99F160E247E00DDD752 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DEF3269D160E5BF100A2AECA /* Localizable.strings */,
 				DEECD9A0160E247E00DDD752 /* Lookup-Info.plist */,
 				DEECD9A1160E247E00DDD752 /* InfoPlist.strings */,
 				DEECD9A4160E247E00DDD752 /* main.m */,
@@ -179,6 +182,7 @@
 			files = (
 				DEECD9A3160E247E00DDD752 /* InfoPlist.strings in Resources */,
 				DEECD9AC160E247E00DDD752 /* MainStoryboard.storyboard in Resources */,
+				DEF3269F160E5BF100A2AECA /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +248,14 @@
 				DEECD9AB160E247E00DDD752 /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		DEF3269D160E5BF100A2AECA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEF3269E160E5BF100A2AECA /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
