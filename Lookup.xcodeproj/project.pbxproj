@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0643DE12627747E8A8A5A5CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D67A511F84F6E8A4D2A67 /* libPods.a */; };
 		DE02C3C1160E630A00BF6AAF /* libMUOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */; };
+		DE1A8A4F160EB66C0046B8FD /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A4E160EB66C0046B8FD /* Group.m */; };
+		DE1A8A52160EB66C0046B8FD /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A51160EB66C0046B8FD /* Photo.m */; };
+		DE1A8A55160EB66C0046B8FD /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A54160EB66C0046B8FD /* Event.m */; };
 		DEECD999160E247E00DDD752 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD998160E247E00DDD752 /* UIKit.framework */; };
 		DEECD99B160E247E00DDD752 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99A160E247E00DDD752 /* Foundation.framework */; };
 		DEECD99D160E247E00DDD752 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99C160E247E00DDD752 /* CoreGraphics.framework */; };
@@ -27,6 +30,12 @@
 		005D67A511F84F6E8A4D2A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		376DB20CA1324F1CAF3CC628 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUOAuth2Client.a; path = "Vendor/MUOAuth2Client/build/Release-iphoneos/libMUOAuth2Client.a"; sourceTree = "<group>"; };
+		DE1A8A4D160EB66C0046B8FD /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Model/Group.h; sourceTree = "<group>"; };
+		DE1A8A4E160EB66C0046B8FD /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Model/Group.m; sourceTree = "<group>"; };
+		DE1A8A50160EB66C0046B8FD /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = Model/Photo.h; sourceTree = "<group>"; };
+		DE1A8A51160EB66C0046B8FD /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = Model/Photo.m; sourceTree = "<group>"; };
+		DE1A8A53160EB66C0046B8FD /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Model/Event.h; sourceTree = "<group>"; };
+		DE1A8A54160EB66C0046B8FD /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Model/Event.m; sourceTree = "<group>"; };
 		DEECD994160E247E00DDD752 /* Lookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEECD998160E247E00DDD752 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DEECD99A160E247E00DDD752 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,6 +73,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE1A8A56160EB6790046B8FD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				DE1A8A53160EB66C0046B8FD /* Event.h */,
+				DE1A8A54160EB66C0046B8FD /* Event.m */,
+				DE1A8A50160EB66C0046B8FD /* Photo.h */,
+				DE1A8A51160EB66C0046B8FD /* Photo.m */,
+				DE1A8A4D160EB66C0046B8FD /* Group.h */,
+				DE1A8A4E160EB66C0046B8FD /* Group.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 		DEECD989160E247E00DDD752 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +145,7 @@
 		DEECDA04160E445900DDD752 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE1A8A56160EB6790046B8FD /* Entities */,
 				DEECDA01160E445400DDD752 /* Lookup.xcdatamodeld */,
 			);
 			name = Model;
@@ -242,6 +265,9 @@
 				DEECD9AF160E247E00DDD752 /* LUViewController.m in Sources */,
 				DEECDA03160E445400DDD752 /* Lookup.xcdatamodeld in Sources */,
 				DEF326A4160E5F4A00A2AECA /* LULoginViewController.m in Sources */,
+				DE1A8A4F160EB66C0046B8FD /* Group.m in Sources */,
+				DE1A8A52160EB66C0046B8FD /* Photo.m in Sources */,
+				DE1A8A55160EB66C0046B8FD /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
