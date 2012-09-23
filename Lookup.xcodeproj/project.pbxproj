@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0643DE12627747E8A8A5A5CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D67A511F84F6E8A4D2A67 /* libPods.a */; };
 		DE02C3C1160E630A00BF6AAF /* libMUOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */; };
+		DE1A8A3C160E98110046B8FD /* LUIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */; };
+		DE1A8A3F160E996B0046B8FD /* LUMeetupAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3E160E996B0046B8FD /* LUMeetupAPIClient.m */; };
 		DE1A8A4F160EB66C0046B8FD /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A4E160EB66C0046B8FD /* Group.m */; };
 		DE1A8A52160EB66C0046B8FD /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A51160EB66C0046B8FD /* Photo.m */; };
 		DE1A8A55160EB66C0046B8FD /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A54160EB66C0046B8FD /* Event.m */; };
@@ -30,6 +32,10 @@
 		005D67A511F84F6E8A4D2A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		376DB20CA1324F1CAF3CC628 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUOAuth2Client.a; path = "Vendor/MUOAuth2Client/build/Release-iphoneos/libMUOAuth2Client.a"; sourceTree = "<group>"; };
+		DE1A8A3A160E98110046B8FD /* LUIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUIncrementalStore.h; path = Model/LUIncrementalStore.h; sourceTree = "<group>"; };
+		DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUIncrementalStore.m; path = Model/LUIncrementalStore.m; sourceTree = "<group>"; };
+		DE1A8A3D160E996B0046B8FD /* LUMeetupAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUMeetupAPIClient.h; path = Model/LUMeetupAPIClient.h; sourceTree = "<group>"; };
+		DE1A8A3E160E996B0046B8FD /* LUMeetupAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUMeetupAPIClient.m; path = Model/LUMeetupAPIClient.m; sourceTree = "<group>"; };
 		DE1A8A4D160EB66C0046B8FD /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Group.h; path = Model/Group.h; sourceTree = "<group>"; };
 		DE1A8A4E160EB66C0046B8FD /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Group.m; path = Model/Group.m; sourceTree = "<group>"; };
 		DE1A8A50160EB66C0046B8FD /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = Model/Photo.h; sourceTree = "<group>"; };
@@ -146,6 +152,10 @@
 			isa = PBXGroup;
 			children = (
 				DE1A8A56160EB6790046B8FD /* Entities */,
+				DE1A8A3D160E996B0046B8FD /* LUMeetupAPIClient.h */,
+				DE1A8A3E160E996B0046B8FD /* LUMeetupAPIClient.m */,
+				DE1A8A3A160E98110046B8FD /* LUIncrementalStore.h */,
+				DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */,
 				DEECDA01160E445400DDD752 /* Lookup.xcdatamodeld */,
 			);
 			name = Model;
@@ -265,6 +275,8 @@
 				DEECD9AF160E247E00DDD752 /* LUViewController.m in Sources */,
 				DEECDA03160E445400DDD752 /* Lookup.xcdatamodeld in Sources */,
 				DEF326A4160E5F4A00A2AECA /* LULoginViewController.m in Sources */,
+				DE1A8A3C160E98110046B8FD /* LUIncrementalStore.m in Sources */,
+				DE1A8A3F160E996B0046B8FD /* LUMeetupAPIClient.m in Sources */,
 				DE1A8A4F160EB66C0046B8FD /* Group.m in Sources */,
 				DE1A8A52160EB66C0046B8FD /* Photo.m in Sources */,
 				DE1A8A55160EB66C0046B8FD /* Event.m in Sources */,
