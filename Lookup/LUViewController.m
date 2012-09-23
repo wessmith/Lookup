@@ -7,22 +7,14 @@
 //
 
 #import "LUViewController.h"
+#import "LULoginViewController.h"
 #import "MUOAuth2Client.h"
+#import "MUOAuth2Credential.h"
 
-////////////////////////////////////////////////////////////////////////////////
-static NSString *const kClientID = @"ojtt0avlqe41hq4or07ovdforp";
-static NSString *const kClientSecret = @"pcj2umuk3igeugcor9ppaqpv3o";
-static NSString *const kRedirectURI = @"lookup://oauth2";
-
-////////////////////////////////////////////////////////////////////////////////
-NSString *CredentialSavePath() {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    return [[paths objectAtIndex:0] stringByAppendingPathComponent:@"OAuthCredential.cache"];
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-@interface LUViewController ()
+@interface LUViewController () <LULoginViewControllerDelegate>
 @property (nonatomic, strong) MUOAuth2Credential *credential;
 @end
 
@@ -36,7 +28,10 @@ NSString *CredentialSavePath() {
 - (MUOAuth2Credential *)credential
 {
     if (!_credential) {
-        _credential = [NSKeyedUnarchiver unarchiveObjectWithFile:CredentialSavePath()];
+        
+        MUOAuth2Client *client = [MUOAuth2Client sharedClient];
+        
+        _credential = [client credentialFromArchive:@"OAuth2Credential.cache"];
     }
     return _credential;
 }
@@ -50,7 +45,8 @@ NSString *CredentialSavePath() {
     
     if (!self.credential) {
         
-        id loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LULoginView"];
+        LULoginViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LULoginView"];
+        loginViewController.delegate = self;
         [self presentViewController:loginViewController animated:NO completion:NULL];
     }
 }
@@ -65,6 +61,16 @@ NSString *CredentialSavePath() {
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+
+#pragma mark - Login View Controller Delegate
+
+- (void)loginViewController:(LULoginViewController *)sender didAuthenticate:(MUOAuth2Credential *)credential
+{
+    NSLog(@"\nCredential: \n%@\n", [credential description]);
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

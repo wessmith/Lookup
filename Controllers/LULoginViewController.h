@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LULoginViewControllerDelegate;
+
+
+@class MUOAuth2Credential;
+
 @interface LULoginViewController : UIViewController
+
+@property (nonatomic, weak) id <LULoginViewControllerDelegate> delegate;
+
+@end
+
+
+@protocol LULoginViewControllerDelegate <NSObject>
+
+- (void)loginViewController:(LULoginViewController *)sender didAuthenticate:(MUOAuth2Credential *)credential;
 
 @end

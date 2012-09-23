@@ -7,9 +7,10 @@
 //
 
 #import "LULoginViewController.h"
+#import "MUOAuth2Client.h"
 
 @interface LULoginViewController ()
-
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @end
 
 @implementation LULoginViewController
@@ -35,10 +36,26 @@
     [self.loginButton setBackgroundImage:loginButtonImageHighlighted forState:UIControlStateHighlighted];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)loginButtonAction:(UIButton *)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    MUOAuth2Client *client = [MUOAuth2Client sharedClient];
+
+    #error Enter you consumer details here:
+    [client authorizeClientWithID:@""
+                           secret:@""
+                      redirectURI:@""
+                          success:^(MUOAuth2Credential *credential) {
+        
+                              [client archiveCredential:credential withName:@"OAuth2Credential.cache"];
+                              
+                              if ([self.delegate respondsToSelector:@selector(loginViewController:didAuthenticate:)])
+                                  [self.delegate loginViewController:self didAuthenticate:credential];
+                              
+    } failure:^(NSError *error) {
+        
+        // TODO: Tell the user that auth failed and they should try again.
+        
+    }];
 }
 
 @end
