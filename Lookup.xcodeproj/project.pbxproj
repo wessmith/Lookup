@@ -14,6 +14,16 @@
 		DE1A8A4F160EB66C0046B8FD /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A4E160EB66C0046B8FD /* Group.m */; };
 		DE1A8A52160EB66C0046B8FD /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A51160EB66C0046B8FD /* Photo.m */; };
 		DE1A8A55160EB66C0046B8FD /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A54160EB66C0046B8FD /* Event.m */; };
+		DE1A8A60160EC3420046B8FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A5A160EC3420046B8FD /* Default-568h@2x.png */; };
+		DE1A8A61160EC3420046B8FD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A5B160EC3420046B8FD /* Default.png */; };
+		DE1A8A62160EC3420046B8FD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A5C160EC3420046B8FD /* Default@2x.png */; };
+		DE1A8A63160EC3420046B8FD /* LULoginBackground-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A5D160EC3420046B8FD /* LULoginBackground-568h@2x.png */; };
+		DE1A8A64160EC3420046B8FD /* LULoginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A5E160EC3420046B8FD /* LULoginBackground.png */; };
+		DE1A8A65160EC3420046B8FD /* LULoginBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A5F160EC3420046B8FD /* LULoginBackground@2x.png */; };
+		DE1A8A68160ECD200046B8FD /* LULoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A66160ECD200046B8FD /* LULoginButton.png */; };
+		DE1A8A69160ECD200046B8FD /* LULoginButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A67160ECD200046B8FD /* LULoginButton@2x.png */; };
+		DE1A8A6E160ED2F60046B8FD /* LULoginButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A6C160ED2F60046B8FD /* LULoginButtonHighlighted.png */; };
+		DE1A8A6F160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */; };
 		DEECD999160E247E00DDD752 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD998160E247E00DDD752 /* UIKit.framework */; };
 		DEECD99B160E247E00DDD752 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99A160E247E00DDD752 /* Foundation.framework */; };
 		DEECD99D160E247E00DDD752 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99C160E247E00DDD752 /* CoreGraphics.framework */; };
@@ -42,6 +52,16 @@
 		DE1A8A51160EB66C0046B8FD /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = Model/Photo.m; sourceTree = "<group>"; };
 		DE1A8A53160EB66C0046B8FD /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Model/Event.h; sourceTree = "<group>"; };
 		DE1A8A54160EB66C0046B8FD /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Model/Event.m; sourceTree = "<group>"; };
+		DE1A8A5A160EC3420046B8FD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DE1A8A5B160EC3420046B8FD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DE1A8A5C160EC3420046B8FD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DE1A8A5D160EC3420046B8FD /* LULoginBackground-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LULoginBackground-568h@2x.png"; sourceTree = "<group>"; };
+		DE1A8A5E160EC3420046B8FD /* LULoginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LULoginBackground.png; sourceTree = "<group>"; };
+		DE1A8A5F160EC3420046B8FD /* LULoginBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LULoginBackground@2x.png"; sourceTree = "<group>"; };
+		DE1A8A66160ECD200046B8FD /* LULoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LULoginButton.png; sourceTree = "<group>"; };
+		DE1A8A67160ECD200046B8FD /* LULoginButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LULoginButton@2x.png"; sourceTree = "<group>"; };
+		DE1A8A6C160ED2F60046B8FD /* LULoginButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LULoginButtonHighlighted.png; sourceTree = "<group>"; };
+		DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LULoginButtonHighlighted@2x.png"; sourceTree = "<group>"; };
 		DEECD994160E247E00DDD752 /* Lookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEECD998160E247E00DDD752 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DEECD99A160E247E00DDD752 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,9 +112,27 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		DE1A8A59160EC3420046B8FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE1A8A6C160ED2F60046B8FD /* LULoginButtonHighlighted.png */,
+				DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */,
+				DE1A8A66160ECD200046B8FD /* LULoginButton.png */,
+				DE1A8A67160ECD200046B8FD /* LULoginButton@2x.png */,
+				DE1A8A5A160EC3420046B8FD /* Default-568h@2x.png */,
+				DE1A8A5B160EC3420046B8FD /* Default.png */,
+				DE1A8A5C160EC3420046B8FD /* Default@2x.png */,
+				DE1A8A5D160EC3420046B8FD /* LULoginBackground-568h@2x.png */,
+				DE1A8A5E160EC3420046B8FD /* LULoginBackground.png */,
+				DE1A8A5F160EC3420046B8FD /* LULoginBackground@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DEECD989160E247E00DDD752 = {
 			isa = PBXGroup;
 			children = (
+				DE1A8A59160EC3420046B8FD /* Resources */,
 				DEECDA04160E445900DDD752 /* Model */,
 				DEECD99E160E247E00DDD752 /* Lookup */,
 				DEECD997160E247E00DDD752 /* Frameworks */,
@@ -229,6 +267,16 @@
 				DEECD9A3160E247E00DDD752 /* InfoPlist.strings in Resources */,
 				DEECD9AC160E247E00DDD752 /* MainStoryboard.storyboard in Resources */,
 				DEF3269F160E5BF100A2AECA /* Localizable.strings in Resources */,
+				DE1A8A60160EC3420046B8FD /* Default-568h@2x.png in Resources */,
+				DE1A8A61160EC3420046B8FD /* Default.png in Resources */,
+				DE1A8A62160EC3420046B8FD /* Default@2x.png in Resources */,
+				DE1A8A63160EC3420046B8FD /* LULoginBackground-568h@2x.png in Resources */,
+				DE1A8A64160EC3420046B8FD /* LULoginBackground.png in Resources */,
+				DE1A8A65160EC3420046B8FD /* LULoginBackground@2x.png in Resources */,
+				DE1A8A68160ECD200046B8FD /* LULoginButton.png in Resources */,
+				DE1A8A69160ECD200046B8FD /* LULoginButton@2x.png in Resources */,
+				DE1A8A6E160ED2F60046B8FD /* LULoginButtonHighlighted.png in Resources */,
+				DE1A8A6F160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

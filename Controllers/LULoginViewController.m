@@ -26,7 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    // Setup the login button style.
+    UIEdgeInsets buttonImageInsets = UIEdgeInsetsMake(0, 67.f, 0, 20.f);
+    UIImage *loginButtonImage = [[UIImage imageNamed:@"LULoginButton"] resizableImageWithCapInsets:buttonImageInsets];
+    [self.loginButton setBackgroundImage:loginButtonImage forState:UIControlStateNormal];
+    UIImage *loginButtonImageHighlighted = [[UIImage imageNamed:@"LULoginButtonHighlighted"] resizableImageWithCapInsets:buttonImageInsets];
+    [self.loginButton setBackgroundImage:loginButtonImageHighlighted forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning
