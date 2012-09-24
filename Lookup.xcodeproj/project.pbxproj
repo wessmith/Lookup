@@ -11,6 +11,7 @@
 		4A2B00011610AE7000014BC2 /* LUGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B00001610AE7000014BC2 /* LUGroupTableViewCell.m */; };
 		4A2B00041610BC7D00014BC2 /* LUGroupPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2B00021610BC7D00014BC2 /* LUGroupPlaceholder.png */; };
 		4A2B00051610BC7D00014BC2 /* LUGroupPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2B00031610BC7D00014BC2 /* LUGroupPlaceholder@2x.png */; };
+		4A2B00141610CD4C00014BC2 /* LUCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B00131610CD4C00014BC2 /* LUCoreDataTableViewController.m */; };
 		DE02C3C1160E630A00BF6AAF /* libMUOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */; };
 		DE1A8A3C160E98110046B8FD /* LUIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */; };
 		DE1A8A3F160E996B0046B8FD /* LUMeetupAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3E160E996B0046B8FD /* LUMeetupAPIClient.m */; };
@@ -47,6 +48,8 @@
 		4A2B00001610AE7000014BC2 /* LUGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUGroupTableViewCell.m; path = Views/LUGroupTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		4A2B00021610BC7D00014BC2 /* LUGroupPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LUGroupPlaceholder.png; sourceTree = "<group>"; };
 		4A2B00031610BC7D00014BC2 /* LUGroupPlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LUGroupPlaceholder@2x.png"; sourceTree = "<group>"; };
+		4A2B00121610CD4C00014BC2 /* LUCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUCoreDataTableViewController.h; path = Controllers/LUCoreDataTableViewController.h; sourceTree = SOURCE_ROOT; };
+		4A2B00131610CD4C00014BC2 /* LUCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUCoreDataTableViewController.m; path = Controllers/LUCoreDataTableViewController.m; sourceTree = SOURCE_ROOT; };
 		4A2BFFFF1610AE7000014BC2 /* LUGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUGroupTableViewCell.h; path = Views/LUGroupTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUOAuth2Client.a; path = "Vendor/MUOAuth2Client/build/Release-iphoneos/libMUOAuth2Client.a"; sourceTree = "<group>"; };
 		DE1A8A3A160E98110046B8FD /* LUIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUIncrementalStore.h; path = Model/LUIncrementalStore.h; sourceTree = "<group>"; };
@@ -106,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A2B00151610CD5000014BC2 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				4A2B00121610CD4C00014BC2 /* LUCoreDataTableViewController.h */,
+				4A2B00131610CD4C00014BC2 /* LUCoreDataTableViewController.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
 		4A2BFFFE1610AE3000014BC2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,10 +234,11 @@
 		DEF326A1160E5F1300A2AECA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DE1A8A70160F64FE0046B8FD /* LUGroupViewController.h */,
-				DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */,
+				4A2B00151610CD5000014BC2 /* Abstract */,
 				DEF326A2160E5F4A00A2AECA /* LULoginViewController.h */,
 				DEF326A3160E5F4A00A2AECA /* LULoginViewController.m */,
+				DE1A8A70160F64FE0046B8FD /* LUGroupViewController.h */,
+				DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -351,6 +364,7 @@
 				DE1A8A55160EB66C0046B8FD /* Event.m in Sources */,
 				DE1A8A72160F64FE0046B8FD /* LUGroupViewController.m in Sources */,
 				4A2B00011610AE7000014BC2 /* LUGroupTableViewCell.m in Sources */,
+				4A2B00141610CD4C00014BC2 /* LUCoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

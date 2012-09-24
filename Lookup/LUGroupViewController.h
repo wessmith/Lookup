@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LUCoreDataTableViewController.h"
 
-@interface LUGroupViewController : UITableViewController
+@interface LUGroupViewController : LUCoreDataTableViewController
 
 @end

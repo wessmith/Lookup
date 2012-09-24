@@ -15,22 +15,12 @@
 
 @interface LUGroupViewController () <LULoginViewControllerDelegate, NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) MUOAuth2Credential *credential;
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @end
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation LUGroupViewController
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)fetchData
-{
-    [self.fetchedResultsController performSelectorOnMainThread:@selector(performFetch:)
-                                                    withObject:nil
-                                                 waitUntilDone:YES
-                                                         modes:@[NSRunLoopCommonModes]];
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setupFetchedResultsController
@@ -114,18 +104,6 @@
 #pragma mark - Table view data source -
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return self.fetchedResultsController.sections.count;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{    
-    return [[self.fetchedResultsController.sections objectAtIndex:section] numberOfObjects];
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -161,28 +139,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 70.f;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Fetched Results Controller Delegate -
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    [self.tableView reloadData];
 }
 
 @end
