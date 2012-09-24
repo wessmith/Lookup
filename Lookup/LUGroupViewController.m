@@ -21,11 +21,16 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation LUGroupViewController
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)fetchData
 {
-    [self.fetchedResultsController performSelectorOnMainThread:@selector(performFetch:) withObject:nil waitUntilDone:YES modes:@[NSRunLoopCommonModes]];
+    [self.fetchedResultsController performSelectorOnMainThread:@selector(performFetch:)
+                                                    withObject:nil
+                                                 waitUntilDone:YES
+                                                         modes:@[NSRunLoopCommonModes]];
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setupFetchedResultsController
 {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Group"];
@@ -45,15 +50,12 @@
     [super viewDidLoad];
     
     self.clearsSelectionOnViewWillAppear = NO;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(fetchData)];
+    self.navigationItem.rightBarButtonItem =
+    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                  target:self
+                                                  action:@selector(fetchData)];
     
     [self setupFetchedResultsController];
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     
     MUOAuth2Client *client = [MUOAuth2Client sharedClient];
     
@@ -66,7 +68,7 @@
         LULoginViewController *controller =
         [self.storyboard instantiateViewControllerWithIdentifier:@"LULoginView"];
         controller.delegate = self;
-        [self presentViewController:controller animated:NO completion:NULL];
+        [self.navigationController presentViewController:controller animated:NO completion:NULL];
         
     } else if (self.credential.isExpired) {
         
@@ -89,13 +91,6 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Login View Controller Delegate -
 
@@ -106,6 +101,8 @@
     NSLog(@"\nCredential: \n%@\n", [credential description]);
     
     [LUMeetupAPIClient sharedClient].credential = credential;
+    
+    [self fetchData];
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -122,19 +119,23 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+{    
     return [[self.fetchedResultsController.sections objectAtIndex:section] numberOfObjects];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"LUGroupCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
+                                                            forIndexPath:indexPath];
     
     NSManagedObject *obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [obj valueForKey:@"name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", [obj valueForKey:@"city"], [obj valueForKey:@"state"]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",
+                                 [obj valueForKey:@"city"],
+                                 [obj valueForKey:@"state"]];
     
     return cell;
 }
