@@ -10,6 +10,7 @@
 #import "MUOAuth2Client.h"
 #import "LULoginViewController.h"
 #import "LUMeetupAPIClient.h"
+#import "LUGroupTableViewCell.h"
 
 @interface LUGroupViewController () <LULoginViewControllerDelegate, NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) MUOAuth2Credential *credential;
@@ -131,18 +132,33 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
                                                             forIndexPath:indexPath];
     
-    NSManagedObject *obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [obj valueForKey:@"name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",
-                                 [obj valueForKey:@"city"],
-                                 [obj valueForKey:@"state"]];
+    [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    NSManagedObject *obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    LUGroupTableViewCell *groupCell = (LUGroupTableViewCell *)cell;
+    groupCell.nameLabel.text = [obj valueForKey:@"name"];
+    groupCell.locationLabel.text = [NSString stringWithFormat:@"%@, %@",
+                                    [obj valueForKey:@"city"],
+                                    [obj valueForKey:@"state"]];
+    groupCell.numberOfMembersLabel.text = [NSString stringWithFormat:@"%@ members",
+                                           [obj valueForKeyPath:@"members"]];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Table view delegate -
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70.f;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

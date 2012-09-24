@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0643DE12627747E8A8A5A5CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D67A511F84F6E8A4D2A67 /* libPods.a */; };
+		4A2B00011610AE7000014BC2 /* LUGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B00001610AE7000014BC2 /* LUGroupTableViewCell.m */; };
+		4A2B00041610BC7D00014BC2 /* LUGroupPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2B00021610BC7D00014BC2 /* LUGroupPlaceholder.png */; };
+		4A2B00051610BC7D00014BC2 /* LUGroupPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2B00031610BC7D00014BC2 /* LUGroupPlaceholder@2x.png */; };
 		DE02C3C1160E630A00BF6AAF /* libMUOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */; };
 		DE1A8A3C160E98110046B8FD /* LUIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */; };
 		DE1A8A3F160E996B0046B8FD /* LUMeetupAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3E160E996B0046B8FD /* LUMeetupAPIClient.m */; };
@@ -42,6 +45,10 @@
 /* Begin PBXFileReference section */
 		005D67A511F84F6E8A4D2A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		376DB20CA1324F1CAF3CC628 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		4A2B00001610AE7000014BC2 /* LUGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUGroupTableViewCell.m; path = Views/LUGroupTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		4A2B00021610BC7D00014BC2 /* LUGroupPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LUGroupPlaceholder.png; sourceTree = "<group>"; };
+		4A2B00031610BC7D00014BC2 /* LUGroupPlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LUGroupPlaceholder@2x.png"; sourceTree = "<group>"; };
+		4A2BFFFF1610AE7000014BC2 /* LUGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUGroupTableViewCell.h; path = Views/LUGroupTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUOAuth2Client.a; path = "Vendor/MUOAuth2Client/build/Release-iphoneos/libMUOAuth2Client.a"; sourceTree = "<group>"; };
 		DE1A8A3A160E98110046B8FD /* LUIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUIncrementalStore.h; path = Model/LUIncrementalStore.h; sourceTree = "<group>"; };
 		DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUIncrementalStore.m; path = Model/LUIncrementalStore.m; sourceTree = "<group>"; };
@@ -102,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A2BFFFE1610AE3000014BC2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A2BFFFF1610AE7000014BC2 /* LUGroupTableViewCell.h */,
+				4A2B00001610AE7000014BC2 /* LUGroupTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		DE1A8A56160EB6790046B8FD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +134,8 @@
 		DE1A8A59160EC3420046B8FD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A2B00021610BC7D00014BC2 /* LUGroupPlaceholder.png */,
+				4A2B00031610BC7D00014BC2 /* LUGroupPlaceholder@2x.png */,
 				DE1A8A6C160ED2F60046B8FD /* LULoginButtonHighlighted.png */,
 				DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */,
 				DE1A8A66160ECD200046B8FD /* LULoginButton.png */,
@@ -145,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				DE1A8A59160EC3420046B8FD /* Resources */,
-				DEECDA04160E445900DDD752 /* Model */,
 				DEECD99E160E247E00DDD752 /* Lookup */,
 				DEECD997160E247E00DDD752 /* Frameworks */,
 				DEECD995160E247E00DDD752 /* Products */,
@@ -177,6 +194,8 @@
 		DEECD99E160E247E00DDD752 /* Lookup */ = {
 			isa = PBXGroup;
 			children = (
+				4A2BFFFE1610AE3000014BC2 /* Views */,
+				DEECDA04160E445900DDD752 /* Model */,
 				DEF326A1160E5F1300A2AECA /* Controllers */,
 				DEECD9A7160E247E00DDD752 /* LUAppDelegate.h */,
 				DEECD9A8160E247E00DDD752 /* LUAppDelegate.m */,
@@ -210,6 +229,7 @@
 				DEECDA01160E445400DDD752 /* Lookup.xcdatamodeld */,
 			);
 			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		DEF326A1160E5F1300A2AECA /* Controllers */ = {
@@ -290,6 +310,8 @@
 				DE1A8A69160ECD200046B8FD /* LULoginButton@2x.png in Resources */,
 				DE1A8A6E160ED2F60046B8FD /* LULoginButtonHighlighted.png in Resources */,
 				DE1A8A6F160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png in Resources */,
+				4A2B00041610BC7D00014BC2 /* LUGroupPlaceholder.png in Resources */,
+				4A2B00051610BC7D00014BC2 /* LUGroupPlaceholder@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +364,7 @@
 				DE1A8A55160EB66C0046B8FD /* Event.m in Sources */,
 				DE1A8A72160F64FE0046B8FD /* LUGroupViewController.m in Sources */,
 				DEB7AED8161015D4009961A3 /* Group+Model.m in Sources */,
+				4A2B00011610AE7000014BC2 /* LUGroupTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
