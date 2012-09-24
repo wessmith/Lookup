@@ -73,10 +73,12 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
     NSMutableDictionary *mutablePropertyValues = [[super attributesForRepresentation:representation
                                                                             ofEntity:entity
                                                                         fromResponse:response] mutableCopy];
-    NSLog(@"Properties: %@", mutablePropertyValues);
+    //NSLog(@"Properties: %@", representation);
     if ([entity.name isEqualToString:@"Group"]) {
         [mutablePropertyValues setValue:[representation valueForKey:@"id"] forKey:@"groupID"];
+        [mutablePropertyValues setValue:[representation valueForKeyPath:@"group_photo.thumb_link"] forKey:@"thumbLink"];
     }
+    NSLog(@"Properties: %@", mutablePropertyValues);
     return mutablePropertyValues;
 }
 

@@ -11,6 +11,7 @@
 #import "LULoginViewController.h"
 #import "LUMeetupAPIClient.h"
 #import "LUGroupTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface LUGroupViewController () <LULoginViewControllerDelegate, NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) MUOAuth2Credential *credential;
@@ -147,7 +148,9 @@
                                     [obj valueForKey:@"city"],
                                     [obj valueForKey:@"state"]];
     groupCell.numberOfMembersLabel.text = [NSString stringWithFormat:@"%@ members",
-                                           [obj valueForKeyPath:@"members"]];
+                                           [obj valueForKey:@"members"]];
+    
+    [groupCell.photoView setImageWithURL:[NSURL URLWithString:[obj valueForKey:@"thumbLink"]]];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
