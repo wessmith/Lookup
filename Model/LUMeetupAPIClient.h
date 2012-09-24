@@ -9,6 +9,12 @@
 #import "AFRESTClient.h"
 #import "AFIncrementalStore.h"
 
+@class MUOAuth2Credential;
+
 @interface LUMeetupAPIClient : AFRESTClient
+
+@property (nonatomic, strong) MUOAuth2Credential *credential;
+
++ (LUMeetupAPIClient *)sharedClient;
 
 @end

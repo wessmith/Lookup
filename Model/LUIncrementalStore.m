@@ -7,6 +7,7 @@
 //
 
 #import "LUIncrementalStore.h"
+#import "LUMeetupAPIClient.h"
 
 @implementation LUIncrementalStore
 
@@ -27,7 +28,7 @@
 
 - (id <AFIncrementalStoreHTTPClient>)HTTPClient
 {
-//    return [
+    return [LUMeetupAPIClient sharedClient];
 }
 
 @end
