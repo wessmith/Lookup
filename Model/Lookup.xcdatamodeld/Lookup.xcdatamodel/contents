@@ -24,8 +24,8 @@
         <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="photos" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Group" positionX="-389" positionY="9" width="128" height="148"/>
         <element name="Event" positionX="-191" positionY="63" width="128" height="133"/>
+        <element name="Group" positionX="-389" positionY="9" width="128" height="148"/>
         <element name="Photo" positionX="-20" positionY="180" width="128" height="103"/>
     </elements>
 </model>

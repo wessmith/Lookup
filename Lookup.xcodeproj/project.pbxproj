@@ -24,6 +24,8 @@
 		DE1A8A69160ECD200046B8FD /* LULoginButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A67160ECD200046B8FD /* LULoginButton@2x.png */; };
 		DE1A8A6E160ED2F60046B8FD /* LULoginButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A6C160ED2F60046B8FD /* LULoginButtonHighlighted.png */; };
 		DE1A8A6F160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */; };
+		DE1A8A72160F64FE0046B8FD /* LUGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */; };
+		DEB7AED8161015D4009961A3 /* Group+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB7AED7161015D4009961A3 /* Group+Model.m */; };
 		DEECD999160E247E00DDD752 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD998160E247E00DDD752 /* UIKit.framework */; };
 		DEECD99B160E247E00DDD752 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99A160E247E00DDD752 /* Foundation.framework */; };
 		DEECD99D160E247E00DDD752 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99C160E247E00DDD752 /* CoreGraphics.framework */; };
@@ -63,6 +65,8 @@
 		DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LULoginButtonHighlighted@2x.png"; sourceTree = "<group>"; };
 		DE1A8A70160F64FE0046B8FD /* LUGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUGroupViewController.h; sourceTree = "<group>"; };
 		DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGroupViewController.m; sourceTree = "<group>"; };
+		DEB7AED6161015D4009961A3 /* Group+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Group+Model.h"; sourceTree = "<group>"; };
+		DEB7AED7161015D4009961A3 /* Group+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+Model.m"; sourceTree = "<group>"; };
 		DEECD994160E247E00DDD752 /* Lookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEECD998160E247E00DDD752 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DEECD99A160E247E00DDD752 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +132,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DEB7AEC2161015A0009961A3 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DEB7AED6161015D4009961A3 /* Group+Model.h */,
+				DEB7AED7161015D4009961A3 /* Group+Model.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		DEECD989160E247E00DDD752 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +201,7 @@
 		DEECDA04160E445900DDD752 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DEB7AEC2161015A0009961A3 /* Categories */,
 				DE1A8A56160EB6790046B8FD /* Entities */,
 				DE1A8A3D160E996B0046B8FD /* LUMeetupAPIClient.h */,
 				DE1A8A3E160E996B0046B8FD /* LUMeetupAPIClient.m */,
@@ -327,6 +341,7 @@
 				DE1A8A52160EB66C0046B8FD /* Photo.m in Sources */,
 				DE1A8A55160EB66C0046B8FD /* Event.m in Sources */,
 				DE1A8A72160F64FE0046B8FD /* LUGroupViewController.m in Sources */,
+				DEB7AED8161015D4009961A3 /* Group+Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
