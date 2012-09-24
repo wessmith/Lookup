@@ -13,17 +13,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @end
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation LULoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,26 +31,26 @@
     [self.loginButton setBackgroundImage:loginButtonImageHighlighted forState:UIControlStateHighlighted];
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (IBAction)loginButtonAction:(UIButton *)sender
 {
     MUOAuth2Client *client = [MUOAuth2Client sharedClient];
 
-    #error Enter you consumer details here:
-    [client authorizeClientWithID:@""
-                           secret:@""
-                      redirectURI:@""
-                          success:^(MUOAuth2Credential *credential) {
+    #warning Remove the Client Key, Secret, etc before pushing to GitHub.    
+    [client authorizeClientWithID:@"ojtt0avlqe41hq4or07ovdforp"
+                           secret:@"pcj2umuk3igeugcor9ppaqpv3o"
+                      redirectURI:@"lookup://oauth2" success:^(MUOAuth2Credential *credential) {
         
-                              [client archiveCredential:credential withName:@"OAuth2Credential.cache"];
-                              
-                              if ([self.delegate respondsToSelector:@selector(loginViewController:didAuthenticate:)])
-                                  [self.delegate loginViewController:self didAuthenticate:credential];
-                              
-    } failure:^(NSError *error) {
-        
-        // TODO: Tell the user that auth failed and they should try again.
-        
-    }];
+                          NSLog(@"\nNew Credential: \n%@\n", [credential description]);
+                          
+                          if ([self.delegate respondsToSelector:@selector(loginViewController:didAuthenticate:)])
+                              [self.delegate loginViewController:self didAuthenticate:credential];
+                          
+                        } failure:^(NSError *error) {
+                            
+                            // TODO: Tell the user that auth failed and they should try again.
+                            NSLog(@"Authorization error -> %@", error);
+                        }];
 }
 
 @end
