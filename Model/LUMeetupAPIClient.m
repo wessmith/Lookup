@@ -9,7 +9,7 @@
 #import "LUMeetupAPIClient.h"
 #import "MUOAuth2Client.h"
 
-static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com";
+static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
 
 @implementation LUMeetupAPIClient
 
@@ -44,23 +44,26 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com";
 #pragma mark - AFIncrementalStore
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (id)representationOrArrayOfRepresentationsFromResponseObject:(id)responseObject
+{
+    //NSLog(@"Result: %@", [responseObject valueForKey:@"results"]);
+    return [responseObject valueForKey:@"results"];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSURLRequest *)requestForFetchRequest:(NSFetchRequest *)fetchRequest withContext:(NSManagedObjectContext *)context
 {
     NSMutableURLRequest *mutableURLRequest = nil;
     
     if ([fetchRequest.entityName isEqualToString:@"Group"]) {
         mutableURLRequest = [self requestWithMethod:@"GET"
-                                               path:@"2/groups"
+                                               path:@"groups"
                                          parameters:@{ @"member_id" : @"self", @"access_token" : self.credential.accessToken }];
     }
     return mutableURLRequest;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (id)representationOrArrayOfRepresentationsFromResponseObject:(id)responseObject
-{
-    return [responseObject valueForKey:@"results"];
-}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSDictionary *)attributesForRepresentation:(NSDictionary *)representation
@@ -75,21 +78,6 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com";
         [mutablePropertyValues setValue:[representation valueForKey:@"id"] forKey:@"groupID"];
     }
     return mutablePropertyValues;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID
-                                 inManagedObjectContext:(NSManagedObjectContext *)context
-{
-    return NO;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (BOOL)shouldFetchRemoteValuesForRelationship:(NSRelationshipDescription *)relationship
-                               forObjectWithID:(NSManagedObjectID *)objectID
-                        inManagedObjectContext:(NSManagedObjectContext *)context
-{
-    return NO;
 }
 
 @end
