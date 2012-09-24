@@ -2,7 +2,7 @@
 //  Photo.h
 //  Lookup
 //
-//  Created by Wesley Smith on 9/22/12.
+//  Created by smith-work on 9/24/12.
 //  Copyright (c) 2012 Wesley Smith. All rights reserved.
 //
 
@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) NSString * caption;
 @property (nonatomic, retain) NSNumber * photoID;
-@property (nonatomic, retain) id thumbnail;
+@property (nonatomic, retain) NSString * thumbLink;
 @property (nonatomic, retain) Event *event;
 
 @end

@@ -2,7 +2,7 @@
 //  Group.h
 //  Lookup
 //
-//  Created by Wesley Smith on 9/22/12.
+//  Created by smith-work on 9/24/12.
 //  Copyright (c) 2012 Wesley Smith. All rights reserved.
 //
 
@@ -13,12 +13,12 @@
 
 @interface Group : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * city;
-@property (nonatomic, retain) NSString * state;
-@property (nonatomic, retain) id thumbnail;
 @property (nonatomic, retain) NSNumber * groupID;
 @property (nonatomic, retain) NSNumber * members;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * state;
+@property (nonatomic, retain) NSString * thumbLink;
 @property (nonatomic, retain) NSSet *events;
 @end
 
