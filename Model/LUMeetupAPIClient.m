@@ -53,11 +53,21 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
     return [responseObject valueForKey:@"results"];
 }
 
+- (NSString *)resourceIdentifierForRepresentation:(NSDictionary *)representation
+                                         ofEntity:(NSEntityDescription *)entity
+                                     fromResponse:(NSHTTPURLResponse *)response
+{
+    if ([entity.name isEqualToString:@"Photo"]) return @"photo_id";
+    
+    return [super resourceIdentifierForRepresentation:representation ofEntity:entity fromResponse:response];
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSURLRequest *)requestForFetchRequest:(NSFetchRequest *)fetchRequest withContext:(NSManagedObjectContext *)context
 {
     NSMutableURLRequest *mutableURLRequest = nil;
     
+    // Groups request ->
     if ([fetchRequest.entityName isEqualToString:@"Group"]) {
         
         NSDictionary *params = @{
@@ -67,9 +77,10 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
         
         mutableURLRequest = [self requestWithMethod:@"GET" path:@"groups" parameters:params];
     }
+    // Events request ->
     else if ([fetchRequest.entityName isEqualToString:@"Event"]) {
         
-        // Extract the group ID from the predicate (There must be another way to fetch Events by groupID).
+        // Extract the group ID from the predicate.
         NSComparisonPredicate *predicate = (NSComparisonPredicate *)fetchRequest.predicate;
         NSNumber *groupID = [predicate.rightExpression expressionValueWithObject:nil context:nil];        
         
@@ -80,7 +91,24 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
         };
         
         mutableURLRequest = [self requestWithMethod:@"GET" path:@"events" parameters:params];
+        
     }
+    // Photos request ->
+    else if ([fetchRequest.entityName isEqualToString:@"Photo"]) {
+        
+        // Extract the event ID from the predicate.
+        NSComparisonPredicate *predicate = (NSComparisonPredicate *)fetchRequest.predicate;
+        NSNumber *eventID = [predicate.rightExpression expressionValueWithObject:nil context:nil];
+        NSLog(@"Event ID = %@", eventID);
+        
+        NSDictionary *params = @{
+            @"event_id" : eventID,
+            @"access_token" : self.credential.accessToken
+        };
+        
+        mutableURLRequest = [self requestWithMethod:@"GET" path:@"photos" parameters:params];
+    }
+    
     return mutableURLRequest;
 }
 
@@ -94,12 +122,16 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
                                                                         fromResponse:response] mutableCopy];
     
     //NSLog(@"Properties: %@", representation);
+    
+    // Group representation ->
     if ([entity.name isEqualToString:@"Group"]) {
         
         [mutablePropertyValues setValue:[representation valueForKey:@"id"] forKey:@"groupID"];
         [mutablePropertyValues setValue:[representation valueForKeyPath:@"group_photo.thumb_link"] forKey:@"thumbLink"];
         
-    } else if ([entity.name isEqualToString:@"Event"]) {
+    }
+    // Event representation ->
+    else if ([entity.name isEqualToString:@"Event"]) {
     
         // Event ID
         id eventID = [representation valueForKey:@"id"];
@@ -115,8 +147,14 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
         // Photo count
         [mutablePropertyValues setValue:[representation valueForKey:@"photo_count"] forKey:@"photoCount"];
     }
+    // Photo representation ->
+    else if ([entity.name isEqualToString:@"Photo"]) {
+        
+        [mutablePropertyValues setValue:[representation valueForKey:@"photo_id"] forKey:@"photoID"];
+        [mutablePropertyValues setValue:[representation valueForKey:@"photo_link"] forKey:@"photoLink"];
+    }
     
-    //NSLog(@"Properties: %@", mutablePropertyValues);
+    NSLog(@"Properties: %@", mutablePropertyValues);
     return mutablePropertyValues;
 }
 
