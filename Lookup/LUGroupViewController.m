@@ -69,7 +69,9 @@
         // Refresh the credential.
         [client refreshCredential:self.credential success:^(MUOAuth2Credential *credential) {
             
-            NSLog(@"\nRefreshed Credential: \n%@\n", [credential description]);
+            self.credential = credential;
+            
+            NSLog(@"\nRefreshed Credential: \n%@\n", [self.credential description]);
             
             [LUMeetupAPIClient sharedClient].credential = self.credential;
             
