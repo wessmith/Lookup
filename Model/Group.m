@@ -2,7 +2,7 @@
 //  Group.m
 //  Lookup
 //
-//  Created by smith-work on 9/24/12.
+//  Created by Wesley Smith on 9/25/12.
 //  Copyright (c) 2012 Wesley Smith. All rights reserved.
 //
 

@@ -14,7 +14,7 @@
 @interface Photo : NSManagedObject
 
 @property (nonatomic, retain) NSString * caption;
-@property (nonatomic, retain) NSNumber * photoID;
+@property (nonatomic, retain) NSString * photoID;
 @property (nonatomic, retain) NSString * photoLink;
 @property (nonatomic, retain) Event *event;
 

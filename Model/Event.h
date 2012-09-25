@@ -2,7 +2,7 @@
 //  Event.h
 //  Lookup
 //
-//  Created by Wesley Smith on 9/22/12.
+//  Created by Wesley Smith on 9/25/12.
 //  Copyright (c) 2012 Wesley Smith. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface Event : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * eventID;
+@property (nonatomic, retain) NSString * eventID;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * photoCount;
 @property (nonatomic, retain) NSDate * time;
