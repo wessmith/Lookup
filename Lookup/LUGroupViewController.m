@@ -13,6 +13,8 @@
 #import "LUGroupTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
 
+#define ROW_HEIGHT 70.f
+
 @interface LUGroupViewController () <LULoginViewControllerDelegate, NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) MUOAuth2Credential *credential;
 @end
@@ -155,7 +157,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 70.f;
+    return ROW_HEIGHT;
 }
 
 @end
