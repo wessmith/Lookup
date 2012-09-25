@@ -87,6 +87,19 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"LUEventsSeque"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        id obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        id controller = segue.destinationViewController;
+        [controller setGroup:obj];
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Login View Controller Delegate -
 
