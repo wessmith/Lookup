@@ -130,7 +130,11 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
     // Group representation ->
     if ([entity.name isEqualToString:@"Group"]) {
         
-        [mutablePropertyValues setValue:[representation valueForKey:@"id"] forKey:@"groupID"];
+        // Group ID
+        NSString *groupID = [NSString stringWithFormat:@"%@", [representation valueForKey:@"id"]];
+        [mutablePropertyValues setValue:groupID forKey:@"groupID"];
+        
+        // Thumb link
         [mutablePropertyValues setValue:[representation valueForKeyPath:@"group_photo.thumb_link"] forKey:@"thumbLink"];
         
     }
@@ -138,9 +142,7 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
     else if ([entity.name isEqualToString:@"Event"]) {
     
         // Event ID
-        id eventID = [representation valueForKey:@"id"];
-        if ([eventID isKindOfClass:[NSString class]])
-            eventID = [NSNumber numberWithDouble:[(NSString *)eventID doubleValue]];
+        NSString *eventID = [NSString stringWithFormat:@"%@", [representation valueForKey:@"id"]];
         [mutablePropertyValues setValue:eventID forKey:@"eventID"];
         
         // Time
@@ -154,11 +156,15 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
     // Photo representation ->
     else if ([entity.name isEqualToString:@"Photo"]) {
         
-        [mutablePropertyValues setValue:[representation valueForKey:@"photo_id"] forKey:@"photoID"];
+        // Photo ID
+        NSString *photoID = [NSString stringWithFormat:@"%@", [representation valueForKey:@"photo_id"]];
+        [mutablePropertyValues setValue:photoID forKey:@"photoID"];
+        
+        // Photo link
         [mutablePropertyValues setValue:[representation valueForKey:@"photo_link"] forKey:@"photoLink"];
     }
+    //NSLog(@"Properties: %@", mutablePropertyValues);
     
-    NSLog(@"Properties: %@", mutablePropertyValues);
     return mutablePropertyValues;
 }
 
