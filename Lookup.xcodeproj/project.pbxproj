@@ -30,6 +30,7 @@
 		DE1A8A6E160ED2F60046B8FD /* LULoginButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A6C160ED2F60046B8FD /* LULoginButtonHighlighted.png */; };
 		DE1A8A6F160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */; };
 		DE1A8A72160F64FE0046B8FD /* LUGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */; };
+		DE67486A16113BF90027C6E0 /* LUEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67486916113BF90027C6E0 /* LUEventTableViewCell.m */; };
 		DEECD999160E247E00DDD752 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD998160E247E00DDD752 /* UIKit.framework */; };
 		DEECD99B160E247E00DDD752 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99A160E247E00DDD752 /* Foundation.framework */; };
 		DEECD99D160E247E00DDD752 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99C160E247E00DDD752 /* CoreGraphics.framework */; };
@@ -77,6 +78,8 @@
 		DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LULoginButtonHighlighted@2x.png"; sourceTree = "<group>"; };
 		DE1A8A70160F64FE0046B8FD /* LUGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUGroupViewController.h; sourceTree = "<group>"; };
 		DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGroupViewController.m; sourceTree = "<group>"; };
+		DE67486816113BF90027C6E0 /* LUEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUEventTableViewCell.h; path = Views/LUEventTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		DE67486916113BF90027C6E0 /* LUEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUEventTableViewCell.m; path = Views/LUEventTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		DEECD994160E247E00DDD752 /* Lookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEECD998160E247E00DDD752 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DEECD99A160E247E00DDD752 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 			children = (
 				4A2BFFFF1610AE7000014BC2 /* LUGroupTableViewCell.h */,
 				4A2B00001610AE7000014BC2 /* LUGroupTableViewCell.m */,
+				DE67486816113BF90027C6E0 /* LUEventTableViewCell.h */,
+				DE67486916113BF90027C6E0 /* LUEventTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				4A2B00011610AE7000014BC2 /* LUGroupTableViewCell.m in Sources */,
 				4A2B00111610CC4500014BC2 /* LUEventViewController.m in Sources */,
 				4A2B00141610CD4C00014BC2 /* LUCoreDataTableViewController.m in Sources */,
+				DE67486A16113BF90027C6E0 /* LUEventTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

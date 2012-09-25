@@ -7,7 +7,11 @@
 //
 
 #import "LUEventViewController.h"
+#import "LUEventTableViewCell.h"
 #import "Group.h"
+#import "Event.h"
+
+#define ROW_HEIGHT 70.f
 
 @interface LUEventViewController ()
 
@@ -66,16 +70,22 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    LUEventTableViewCell *eventCell = (LUEventTableViewCell *)cell;
     
-    cell.textLabel.text = [obj valueForKey:@"name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [obj valueForKey:@"time"]];
+    eventCell.nameLabel.text = event.name;
+    [eventCell setTime:event.time];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Table view delegate
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return ROW_HEIGHT;
+}
 
 
 @end

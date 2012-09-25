@@ -10,4 +10,8 @@
 
 @interface LUEventTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+- (void)setTime:(NSDate *)time;
+
 @end

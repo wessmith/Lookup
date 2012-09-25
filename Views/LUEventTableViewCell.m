@@ -8,22 +8,34 @@
 
 #import "LUEventTableViewCell.h"
 
+@interface LUEventTableViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *dayOfWeekLabel;
+@property (weak, nonatomic) IBOutlet UILabel *monthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dayOfMonthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@end
+
 @implementation LUEventTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)setTime:(NSDate *)time
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    static NSDateFormatter *_dateTimeFormatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _dateTimeFormatter = [[NSDateFormatter alloc] init];
+    });
+    
+    [_dateTimeFormatter setDateFormat:@"EEE"];
+    self.dayOfWeekLabel.text = [[_dateTimeFormatter stringFromDate:time] uppercaseString];
+    
+    [_dateTimeFormatter setDateFormat:@"MMM"];
+    self.monthLabel.text = [[_dateTimeFormatter stringFromDate:time] uppercaseString];
+    
+    [_dateTimeFormatter setDateFormat:@"d"];
+    self.dayOfMonthLabel.text = [_dateTimeFormatter stringFromDate:time];
+    
+    [_dateTimeFormatter setDateFormat:@"h:mm a"];
+    self.timeLabel.text = [_dateTimeFormatter stringFromDate:time];
 }
 
 @end
