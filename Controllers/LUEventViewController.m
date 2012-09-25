@@ -52,6 +52,19 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"LUPhotosView"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        id obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        id controller = segue.destinationViewController;
+        [controller setValue:obj forKey:@"Event"];
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Table view data source
 
