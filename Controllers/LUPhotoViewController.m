@@ -7,32 +7,27 @@
 //
 
 #import "LUPhotoViewController.h"
+#import "Event.h"
 
 @interface LUPhotoViewController ()
-
+@property (nonatomic, strong) NSArray *photos;
 @end
 
 @implementation LUPhotoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Photo"];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"photoID" ascending:NO]];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"event.eventID=%@", self.event.eventID];
+    
+    NSError *error = nil;
+    self.photos = [self.event.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (error) NSLog(@"Error fetching photos: %@", error);
+    
+    NSLog(@"Photos: %@", self.photos);
 }
 
 @end

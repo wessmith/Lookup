@@ -8,6 +8,10 @@
 
 #import "NIToolbarPhotoViewController.h"
 
+@class Event;
+
 @interface LUPhotoViewController : NIToolbarPhotoViewController
+
+@property (nonatomic, strong) Event *event;
 
 @end

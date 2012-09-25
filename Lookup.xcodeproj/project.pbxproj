@@ -13,6 +13,7 @@
 		4A2B00051610BC7D00014BC2 /* LUGroupPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2B00031610BC7D00014BC2 /* LUGroupPlaceholder@2x.png */; };
 		4A2B00111610CC4500014BC2 /* LUEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B00101610CC4500014BC2 /* LUEventViewController.m */; };
 		4A2B00141610CD4C00014BC2 /* LUCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B00131610CD4C00014BC2 /* LUCoreDataTableViewController.m */; };
+		4AA1A1401611F76300870279 /* LUPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A13F1611F76300870279 /* LUPhotoViewController.m */; };
 		DE02C3C1160E630A00BF6AAF /* libMUOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */; };
 		DE1A8A3C160E98110046B8FD /* LUIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */; };
 		DE1A8A3F160E996B0046B8FD /* LUMeetupAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3E160E996B0046B8FD /* LUMeetupAPIClient.m */; };
@@ -55,6 +56,8 @@
 		4A2B00121610CD4C00014BC2 /* LUCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUCoreDataTableViewController.h; path = Controllers/LUCoreDataTableViewController.h; sourceTree = SOURCE_ROOT; };
 		4A2B00131610CD4C00014BC2 /* LUCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUCoreDataTableViewController.m; path = Controllers/LUCoreDataTableViewController.m; sourceTree = SOURCE_ROOT; };
 		4A2BFFFF1610AE7000014BC2 /* LUGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUGroupTableViewCell.h; path = Views/LUGroupTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		4AA1A13E1611F76300870279 /* LUPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUPhotoViewController.h; path = Controllers/LUPhotoViewController.h; sourceTree = SOURCE_ROOT; };
+		4AA1A13F1611F76300870279 /* LUPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUPhotoViewController.m; path = Controllers/LUPhotoViewController.m; sourceTree = SOURCE_ROOT; };
 		DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUOAuth2Client.a; path = "Vendor/MUOAuth2Client/build/Release-iphoneos/libMUOAuth2Client.a"; sourceTree = "<group>"; };
 		DE1A8A3A160E98110046B8FD /* LUIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUIncrementalStore.h; path = Model/LUIncrementalStore.h; sourceTree = "<group>"; };
 		DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUIncrementalStore.m; path = Model/LUIncrementalStore.m; sourceTree = "<group>"; };
@@ -249,6 +252,8 @@
 				DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */,
 				4A2B000F1610CC4500014BC2 /* LUEventViewController.h */,
 				4A2B00101610CC4500014BC2 /* LUEventViewController.m */,
+				4AA1A13E1611F76300870279 /* LUPhotoViewController.h */,
+				4AA1A13F1611F76300870279 /* LUPhotoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				4A2B00111610CC4500014BC2 /* LUEventViewController.m in Sources */,
 				4A2B00141610CD4C00014BC2 /* LUCoreDataTableViewController.m in Sources */,
 				DE67486A16113BF90027C6E0 /* LUEventTableViewCell.m in Sources */,
+				4AA1A1401611F76300870279 /* LUPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
