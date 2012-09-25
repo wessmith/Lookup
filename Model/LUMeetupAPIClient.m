@@ -11,6 +11,9 @@
 
 static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation LUMeetupAPIClient
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,14 +59,30 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
     NSMutableURLRequest *mutableURLRequest = nil;
     
     if ([fetchRequest.entityName isEqualToString:@"Group"]) {
-        mutableURLRequest = [self requestWithMethod:@"GET"
-                                               path:@"groups"
-                                         parameters:@{ @"member_id" : @"self", @"access_token" : self.credential.accessToken }];
+        
+        NSDictionary *params = @{
+            @"member_id" : @"self",
+            @"access_token" : self.credential.accessToken
+        };
+        
+        mutableURLRequest = [self requestWithMethod:@"GET" path:@"groups" parameters:params];
+    }
+    else if ([fetchRequest.entityName isEqualToString:@"Event"]) {
+        
+        // Extract the group ID from the predicate (There must be another way to fetch Events by groupID).
+        NSComparisonPredicate *predicate = (NSComparisonPredicate *)fetchRequest.predicate;
+        NSNumber *groupID = [predicate.rightExpression expressionValueWithObject:nil context:nil];        
+        
+        NSDictionary *params = @{
+            @"group_id" : groupID,
+            @"status" : @"past",
+            @"access_token" : self.credential.accessToken
+        };
+        
+        mutableURLRequest = [self requestWithMethod:@"GET" path:@"events" parameters:params];
     }
     return mutableURLRequest;
 }
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSDictionary *)attributesForRepresentation:(NSDictionary *)representation
@@ -73,13 +92,45 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
     NSMutableDictionary *mutablePropertyValues = [[super attributesForRepresentation:representation
                                                                             ofEntity:entity
                                                                         fromResponse:response] mutableCopy];
+    
     //NSLog(@"Properties: %@", representation);
     if ([entity.name isEqualToString:@"Group"]) {
+        
         [mutablePropertyValues setValue:[representation valueForKey:@"id"] forKey:@"groupID"];
         [mutablePropertyValues setValue:[representation valueForKeyPath:@"group_photo.thumb_link"] forKey:@"thumbLink"];
+        
+    } else if ([entity.name isEqualToString:@"Event"]) {
+    
+        // Event ID
+        id eventID = [representation valueForKey:@"id"];
+        if ([eventID isKindOfClass:[NSString class]])
+            eventID = [NSNumber numberWithDouble:[(NSString *)eventID doubleValue]];
+        [mutablePropertyValues setValue:eventID forKey:@"eventID"];
+        
+        // Time
+        NSNumber *time = [representation valueForKey:@"time"];
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:time.doubleValue];
+        [mutablePropertyValues setValue:date forKey:@"time"];
+        
+        // Photo count
+        [mutablePropertyValues setValue:[representation valueForKey:@"photo_count"] forKey:@"photoCount"];
     }
-    NSLog(@"Properties: %@", mutablePropertyValues);
+    
+    //NSLog(@"Properties: %@", mutablePropertyValues);
     return mutablePropertyValues;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID
+                                 inManagedObjectContext:(NSManagedObjectContext *)context {
+    return NO;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)shouldFetchRemoteValuesForRelationship:(NSRelationshipDescription *)relationship
+                               forObjectWithID:(NSManagedObjectID *)objectID
+                        inManagedObjectContext:(NSManagedObjectContext *)context {
+    return NO;
 }
 
 @end
