@@ -69,6 +69,10 @@
             
             NSLog(@"\nRefreshed Credential: \n%@\n", [credential description]);
             
+            [LUMeetupAPIClient sharedClient].credential = self.credential;
+            
+            [self fetchData];
+            
         } failure:^(NSError *error) {
             
             NSLog(@"Authorization error -> %@", error);
