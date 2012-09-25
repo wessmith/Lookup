@@ -168,6 +168,19 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
     return mutablePropertyValues;
 }
 
+- (NSDictionary *)representationsForRelationshipsFromRepresentation:(NSDictionary *)representation ofEntity:(NSEntityDescription *)entity fromResponse:(NSHTTPURLResponse *)response
+{
+    NSDictionary *rep = nil;
+    if ([entity.name isEqualToString:@"Photo"]) {
+        
+        NSString *eventID = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"photo_album.event_id"]];
+        rep = @{ @"event" : @{@"id" : eventID } };
+    } else {
+        rep = representation;
+    }
+    return rep;
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID
                                  inManagedObjectContext:(NSManagedObjectContext *)context {
