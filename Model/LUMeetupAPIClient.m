@@ -57,8 +57,12 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
                                          ofEntity:(NSEntityDescription *)entity
                                      fromResponse:(NSHTTPURLResponse *)response
 {
-    if ([entity.name isEqualToString:@"Photo"]) return @"photo_id";
-    
+    if ([entity.name isEqualToString:@"Photo"]) {
+        
+        return [NSString stringWithFormat:@"%@", [representation valueForKey:@"photo_id"]];
+        
+    }
+        
     return [super resourceIdentifierForRepresentation:representation ofEntity:entity fromResponse:response];
 }
 
