@@ -147,7 +147,7 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
         
         // Time
         NSNumber *time = [representation valueForKey:@"time"];
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:time.doubleValue/1000];
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:time.longLongValue/1000];
         [mutablePropertyValues setValue:date forKey:@"time"];
         
         // Photo count
