@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Wesley Smith. All rights reserved.
 //
 
-#import "NIToolbarPhotoViewController.h"
+#import "NetworkPhotoAlbumViewController.h"
 
 @class Event;
 
-@interface LUPhotoViewController : NIToolbarPhotoViewController
+@interface LUPhotoViewController : NetworkPhotoAlbumViewController
 
 @property (nonatomic, strong) Event *event;
 
