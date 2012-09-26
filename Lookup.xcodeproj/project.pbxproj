@@ -32,6 +32,7 @@
 		DE1A8A6F160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */; };
 		DE1A8A72160F64FE0046B8FD /* LUGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */; };
 		DE67486A16113BF90027C6E0 /* LUEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67486916113BF90027C6E0 /* LUEventTableViewCell.m */; };
+		DEB0968E161289AD00C04795 /* NetworkPhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB0968D161289AC00C04795 /* NetworkPhotoAlbumViewController.m */; };
 		DEECD999160E247E00DDD752 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD998160E247E00DDD752 /* UIKit.framework */; };
 		DEECD99B160E247E00DDD752 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99A160E247E00DDD752 /* Foundation.framework */; };
 		DEECD99D160E247E00DDD752 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD99C160E247E00DDD752 /* CoreGraphics.framework */; };
@@ -83,6 +84,8 @@
 		DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGroupViewController.m; sourceTree = "<group>"; };
 		DE67486816113BF90027C6E0 /* LUEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUEventTableViewCell.h; path = Views/LUEventTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		DE67486916113BF90027C6E0 /* LUEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUEventTableViewCell.m; path = Views/LUEventTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		DEB0968C161289AC00C04795 /* NetworkPhotoAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkPhotoAlbumViewController.h; sourceTree = "<group>"; };
+		DEB0968D161289AC00C04795 /* NetworkPhotoAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkPhotoAlbumViewController.m; sourceTree = "<group>"; };
 		DEECD994160E247E00DDD752 /* Lookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEECD998160E247E00DDD752 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DEECD99A160E247E00DDD752 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -254,6 +257,8 @@
 				4A2B00101610CC4500014BC2 /* LUEventViewController.m */,
 				4AA1A13E1611F76300870279 /* LUPhotoViewController.h */,
 				4AA1A13F1611F76300870279 /* LUPhotoViewController.m */,
+				DEB0968C161289AC00C04795 /* NetworkPhotoAlbumViewController.h */,
+				DEB0968D161289AC00C04795 /* NetworkPhotoAlbumViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				4A2B00141610CD4C00014BC2 /* LUCoreDataTableViewController.m in Sources */,
 				DE67486A16113BF90027C6E0 /* LUEventTableViewCell.m in Sources */,
 				4AA1A1401611F76300870279 /* LUPhotoViewController.m in Sources */,
+				DEB0968E161289AD00C04795 /* NetworkPhotoAlbumViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
