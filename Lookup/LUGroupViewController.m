@@ -15,6 +15,8 @@
 
 #define ROW_HEIGHT 70.f
 
+static NSString *const kClientID = @"ojtt0avlqe41hq4or07ovdforp";
+
 @interface LUGroupViewController () <LULoginViewControllerDelegate, NSFetchedResultsControllerDelegate>
 @property (nonatomic, strong) MUOAuth2Credential *credential;
 @end
@@ -39,6 +41,16 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)presentLoginViewAnimated:(BOOL)animated
+{
+    // Show the login view.
+    LULoginViewController *controller =
+    [self.storyboard instantiateViewControllerWithIdentifier:@"LULoginView"];
+    controller.delegate = self;
+    [self.navigationController presentViewController:controller animated:animated completion:NULL];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -54,15 +66,11 @@
     MUOAuth2Client *client = [MUOAuth2Client sharedClient];
     
     // Attempt to unarchive an existing credential.
-    self.credential = [client credentialWithClientID:@"ojtt0avlqe41hq4or07ovdforp"];
+    self.credential = [client credentialWithClientID:kClientID];
     
     if (!self.credential) {
         
-        // Show the login view.
-        LULoginViewController *controller =
-        [self.storyboard instantiateViewControllerWithIdentifier:@"LULoginView"];
-        controller.delegate = self;
-        [self.navigationController presentViewController:controller animated:NO completion:NULL];
+        [self presentLoginViewAnimated:NO];
         
     } else if (self.credential.isExpired) {
         
@@ -88,6 +96,15 @@
         
         [self fetchData];
     }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (IBAction)logOutAction:(UIBarButtonItem *)sender
+{
+    // Forget the credential.
+    [[MUOAuth2Client sharedClient] forgetCredentialWithClientID:kClientID];
+    
+    [self presentLoginViewAnimated:YES];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

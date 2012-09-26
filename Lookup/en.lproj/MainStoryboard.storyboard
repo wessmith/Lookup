@@ -105,7 +105,13 @@
                             <outlet property="delegate" destination="Vgz-I1-vXt" id="WZ7-cF-Coj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Meetup Groups" id="W2v-X0-G8Z"/>
+                    <navigationItem key="navigationItem" title="Meetup Groups" id="W2v-X0-G8Z">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="K4P-9n-Vat">
+                            <connections>
+                                <action selector="logOutAction:" destination="Vgz-I1-vXt" id="7Vb-KN-eQK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpL-wz-Tfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
