@@ -8,6 +8,7 @@
 
 #import "LUEventViewController.h"
 #import "LUEventTableViewCell.h"
+#import "LUPhotoViewController.h"
 #import "Group.h"
 #import "Event.h"
 
@@ -52,19 +53,6 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"LUPhotosView"]) {
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        id obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        
-        id controller = segue.destinationViewController;
-        [controller setValue:obj forKey:@"Event"];
-    }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Table view data source
 
@@ -100,5 +88,16 @@
     return ROW_HEIGHT;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    LUPhotoViewController *controller = [[LUPhotoViewController alloc] init];
+    [controller setValue:obj forKey:@"Event"];
+    
+    NSLog(@"Event = %@", obj);
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 @end
