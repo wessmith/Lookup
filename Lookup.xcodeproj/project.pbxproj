@@ -26,6 +26,8 @@
 		DE16EB9C16140C92001BB805 /* LUNavBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DE16EB9A16140C92001BB805 /* LUNavBackButton.png */; };
 		DE16EB9D16140C92001BB805 /* LUNavBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE16EB9B16140C92001BB805 /* LUNavBackButton@2x.png */; };
 		DE16EBA0161412AF001BB805 /* LUTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = DE16EB9F161412AF001BB805 /* LUTheme.m */; };
+		DE16EBA61614265D001BB805 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DE16EBA51614265D001BB805 /* Icon.png */; };
+		DE16EBA816142663001BB805 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE16EBA716142663001BB805 /* Icon@2x.png */; };
 		DE1A8A3C160E98110046B8FD /* LUIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */; };
 		DE1A8A3F160E996B0046B8FD /* LUMeetupAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3E160E996B0046B8FD /* LUMeetupAPIClient.m */; };
 		DE1A8A4F160EB66C0046B8FD /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A4E160EB66C0046B8FD /* Group.m */; };
@@ -83,6 +85,8 @@
 		DE16EB9B16140C92001BB805 /* LUNavBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LUNavBackButton@2x.png"; sourceTree = "<group>"; };
 		DE16EB9E161412AE001BB805 /* LUTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUTheme.h; sourceTree = "<group>"; };
 		DE16EB9F161412AF001BB805 /* LUTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUTheme.m; sourceTree = "<group>"; };
+		DE16EBA51614265D001BB805 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		DE16EBA716142663001BB805 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		DE1A8A3A160E98110046B8FD /* LUIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUIncrementalStore.h; path = Model/LUIncrementalStore.h; sourceTree = "<group>"; };
 		DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUIncrementalStore.m; path = Model/LUIncrementalStore.m; sourceTree = "<group>"; };
 		DE1A8A3D160E996B0046B8FD /* LUMeetupAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUMeetupAPIClient.h; path = Model/LUMeetupAPIClient.h; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 		DE1A8A59160EC3420046B8FD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE16EBA716142663001BB805 /* Icon@2x.png */,
+				DE16EBA51614265D001BB805 /* Icon.png */,
 				DE16EB9A16140C92001BB805 /* LUNavBackButton.png */,
 				DE16EB9B16140C92001BB805 /* LUNavBackButton@2x.png */,
 				DE16EB9616140919001BB805 /* LUNavButton.png */,
@@ -377,6 +383,8 @@
 				DE16EB9916140919001BB805 /* LUNavButton@2x.png in Resources */,
 				DE16EB9C16140C92001BB805 /* LUNavBackButton.png in Resources */,
 				DE16EB9D16140C92001BB805 /* LUNavBackButton@2x.png in Resources */,
+				DE16EBA61614265D001BB805 /* Icon.png in Resources */,
+				DE16EBA816142663001BB805 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
