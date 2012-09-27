@@ -112,6 +112,12 @@ static NSString *const kClientID = @"ojtt0avlqe41hq4or07ovdforp";
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (IBAction)logOutAction:(UIBarButtonItem *)sender
 {
     // Forget the credential.
