@@ -11,15 +11,4 @@
 
 @implementation LUGroupTableViewCell
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    
-//    self.photoView.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:0.6].CGColor;
-//    self.photoView.layer.borderWidth = 5.f;
-//    self.photoView.layer.cornerRadius = 4.f;
-    
-
-}
-
 @end

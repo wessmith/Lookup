@@ -16,6 +16,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfMembersLabel;
 
-- (void)setGroup:(Group *)group;
-
 @end
