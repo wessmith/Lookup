@@ -15,6 +15,8 @@
 		4A2B00141610CD4C00014BC2 /* LUCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B00131610CD4C00014BC2 /* LUCoreDataTableViewController.m */; };
 		4AA1A1401611F76300870279 /* LUPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1A13F1611F76300870279 /* LUPhotoViewController.m */; };
 		DE02C3C1160E630A00BF6AAF /* libMUOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */; };
+		DE16EB8B1613FA20001BB805 /* LUBackgroundTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = DE16EB891613FA20001BB805 /* LUBackgroundTexture.png */; };
+		DE16EB8C1613FA20001BB805 /* LUBackgroundTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE16EB8A1613FA20001BB805 /* LUBackgroundTexture@2x.png */; };
 		DE1A8A3C160E98110046B8FD /* LUIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */; };
 		DE1A8A3F160E996B0046B8FD /* LUMeetupAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A3E160E996B0046B8FD /* LUMeetupAPIClient.m */; };
 		DE1A8A4F160EB66C0046B8FD /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A4E160EB66C0046B8FD /* Group.m */; };
@@ -60,6 +62,8 @@
 		4AA1A13E1611F76300870279 /* LUPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUPhotoViewController.h; path = Controllers/LUPhotoViewController.h; sourceTree = SOURCE_ROOT; };
 		4AA1A13F1611F76300870279 /* LUPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUPhotoViewController.m; path = Controllers/LUPhotoViewController.m; sourceTree = SOURCE_ROOT; };
 		DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMUOAuth2Client.a; path = "Vendor/MUOAuth2Client/build/Release-iphoneos/libMUOAuth2Client.a"; sourceTree = "<group>"; };
+		DE16EB891613FA20001BB805 /* LUBackgroundTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LUBackgroundTexture.png; sourceTree = "<group>"; };
+		DE16EB8A1613FA20001BB805 /* LUBackgroundTexture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LUBackgroundTexture@2x.png"; sourceTree = "<group>"; };
 		DE1A8A3A160E98110046B8FD /* LUIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUIncrementalStore.h; path = Model/LUIncrementalStore.h; sourceTree = "<group>"; };
 		DE1A8A3B160E98110046B8FD /* LUIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUIncrementalStore.m; path = Model/LUIncrementalStore.m; sourceTree = "<group>"; };
 		DE1A8A3D160E996B0046B8FD /* LUMeetupAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUMeetupAPIClient.h; path = Model/LUMeetupAPIClient.h; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 		DE1A8A59160EC3420046B8FD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE16EB891613FA20001BB805 /* LUBackgroundTexture.png */,
+				DE16EB8A1613FA20001BB805 /* LUBackgroundTexture@2x.png */,
 				4A2B00021610BC7D00014BC2 /* LUGroupPlaceholder.png */,
 				4A2B00031610BC7D00014BC2 /* LUGroupPlaceholder@2x.png */,
 				DE1A8A6C160ED2F60046B8FD /* LULoginButtonHighlighted.png */,
@@ -332,6 +338,8 @@
 				DE1A8A6F160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png in Resources */,
 				4A2B00041610BC7D00014BC2 /* LUGroupPlaceholder.png in Resources */,
 				4A2B00051610BC7D00014BC2 /* LUGroupPlaceholder@2x.png in Resources */,
+				DE16EB8B1613FA20001BB805 /* LUBackgroundTexture.png in Resources */,
+				DE16EB8C1613FA20001BB805 /* LUBackgroundTexture@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

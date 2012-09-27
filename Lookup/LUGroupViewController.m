@@ -55,6 +55,8 @@ static NSString *const kClientID = @"ojtt0avlqe41hq4or07ovdforp";
 {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LUBackgroundTexture"]];
+    
     self.clearsSelectionOnViewWillAppear = NO;
     self.navigationItem.rightBarButtonItem =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
