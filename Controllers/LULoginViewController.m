@@ -11,6 +11,7 @@
 
 @interface LULoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @end
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,7 +23,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    // TODO: There must be a more elegant way to handle this.
+    if ([UIScreen mainScreen].bounds.size.height == 568.f) {
+        UIImage *bgImage = [UIImage imageNamed:@"LULoginBackground-568h@2x"];
+        self.backgroundImageView.image = bgImage;
+    }
+        
+    
     // Setup the login button style.
     UIEdgeInsets buttonImageInsets = UIEdgeInsetsMake(0, 67.f, 0, 20.f);
     UIImage *loginButtonImage = [[UIImage imageNamed:@"LULoginButton"] resizableImageWithCapInsets:buttonImageInsets];

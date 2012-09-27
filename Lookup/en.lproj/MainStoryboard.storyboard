@@ -33,6 +33,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="Sga-sD-vLF" id="hYZ-1R-icr"/>
                         <outlet property="loginButton" destination="pcD-KH-elA" id="qWN-lt-BA5"/>
                     </connections>
                 </viewController>
@@ -248,6 +249,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LULoginViewController.h"/>
             <relationships>
                 <relationship kind="action" name="loginButtonAction:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
             </relationships>
         </class>
