@@ -111,7 +111,7 @@
 {
     id obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
     LUPhotoViewController *controller = [[LUPhotoViewController alloc] init];
-    [controller setValue:obj forKey:@"Event"];
+    [controller setValue:obj forKey:@"event"];
     
     NSLog(@"Event = %@", obj);
     

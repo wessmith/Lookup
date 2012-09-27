@@ -135,7 +135,7 @@ static NSString *const kClientID = @"ojtt0avlqe41hq4or07ovdforp";
         id obj = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
         id controller = segue.destinationViewController;
-        [controller setGroup:obj];
+        [controller setValue:obj forKey:@"group"];
     }
 }
 
