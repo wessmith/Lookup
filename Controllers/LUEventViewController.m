@@ -11,6 +11,7 @@
 #import "LUPhotoViewController.h"
 #import "Group.h"
 #import "Event.h"
+#import "LUTheme.h"
 
 #define ROW_HEIGHT 70.f
 
@@ -40,10 +41,20 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [LUTheme themeNavigationBar:self.navigationController.navigationBar];
+    [LUTheme themeBarButtonItem:self.navigationItem.rightBarButtonItem];
+    [LUTheme themeBackBarButtonItem];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LUBackgroundTexture"]];
     
     self.clearsSelectionOnViewWillAppear = NO;

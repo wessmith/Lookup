@@ -9,6 +9,7 @@
 #import "LUPhotoViewController.h"
 #import "Event.h"
 #import "Photo.h"
+#import "LUTheme.h"
 
 @interface LUPhotoViewController () <NSFetchedResultsControllerDelegate, NIPhotoAlbumScrollViewDataSource>
 @property (nonatomic, strong) NSArray *photoInfoObjects;
@@ -43,6 +44,16 @@
                                                                                    cacheName:nil];
     self.fetchedResultsController.delegate = self;
     [self fetchData];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [LUTheme clearNavigationBarTheme:self.navigationController.navigationBar];
+    [LUTheme clearBarButtonItemTheme:self.navigationItem.rightBarButtonItem];
+    [LUTheme clearBackBarButtonItemTheme];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

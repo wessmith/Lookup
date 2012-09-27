@@ -12,6 +12,7 @@
 #import "LUMeetupAPIClient.h"
 #import "LUGroupTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "LUTheme.h"
 
 #define ROW_HEIGHT 70.f
 
@@ -48,6 +49,16 @@ static NSString *const kClientID = @"ojtt0avlqe41hq4or07ovdforp";
     [self.storyboard instantiateViewControllerWithIdentifier:@"LULoginView"];
     controller.delegate = self;
     [self.navigationController presentViewController:controller animated:animated completion:NULL];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [LUTheme themeNavigationBar:self.navigationController.navigationBar];
+    [LUTheme themeBarButtonItem:self.navigationItem.leftBarButtonItem];
+    [LUTheme themeBarButtonItem:self.navigationItem.rightBarButtonItem];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
