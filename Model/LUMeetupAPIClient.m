@@ -152,7 +152,12 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
         [mutablePropertyValues setValue:date forKey:@"time"];
         
         // Photo count
-        [mutablePropertyValues setValue:[representation valueForKey:@"photo_count"] forKey:@"photoCount"];
+        NSNumber *photoCount = [representation valueForKey:@"photo_count"];
+        [mutablePropertyValues setValue:photoCount forKey:@"photoCount"];
+        
+        // Has photos
+        BOOL hasPhotos = (photoCount.integerValue > 0);
+        [mutablePropertyValues setValue:@(hasPhotos) forKey:@"hasPhotos"];
     }
     // Photo representation ->
     else if ([entity.name isEqualToString:@"Photo"]) {
@@ -164,7 +169,7 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
         // Photo link
         [mutablePropertyValues setValue:[representation valueForKey:@"photo_link"] forKey:@"photoLink"];
     }
-    NSLog(@"Properties: %@", mutablePropertyValues);
+    //NSLog(@"Properties: %@", mutablePropertyValues);
     
     return mutablePropertyValues;
 }
