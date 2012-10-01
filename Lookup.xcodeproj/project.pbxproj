@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0643DE12627747E8A8A5A5CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D67A511F84F6E8A4D2A67 /* libPods.a */; };
+		4A21EE7A161A02BC0066B26C /* LUTableSectionHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A21EE78161A02BC0066B26C /* LUTableSectionHeader.png */; };
+		4A21EE7B161A02BC0066B26C /* LUTableSectionHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A21EE79161A02BC0066B26C /* LUTableSectionHeader@2x.png */; };
 		4A2B00011610AE7000014BC2 /* LUGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2B00001610AE7000014BC2 /* LUGroupTableViewCell.m */; };
 		4A2B00041610BC7D00014BC2 /* LUGroupPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2B00021610BC7D00014BC2 /* LUGroupPlaceholder.png */; };
 		4A2B00051610BC7D00014BC2 /* LUGroupPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A2B00031610BC7D00014BC2 /* LUGroupPlaceholder@2x.png */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		005D67A511F84F6E8A4D2A67 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		376DB20CA1324F1CAF3CC628 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		4A21EE78161A02BC0066B26C /* LUTableSectionHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LUTableSectionHeader.png; sourceTree = "<group>"; };
+		4A21EE79161A02BC0066B26C /* LUTableSectionHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LUTableSectionHeader@2x.png"; sourceTree = "<group>"; };
 		4A2B00001610AE7000014BC2 /* LUGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUGroupTableViewCell.m; path = Views/LUGroupTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		4A2B00021610BC7D00014BC2 /* LUGroupPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LUGroupPlaceholder.png; sourceTree = "<group>"; };
 		4A2B00031610BC7D00014BC2 /* LUGroupPlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LUGroupPlaceholder@2x.png"; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 		DE1A8A59160EC3420046B8FD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A21EE78161A02BC0066B26C /* LUTableSectionHeader.png */,
+				4A21EE79161A02BC0066B26C /* LUTableSectionHeader@2x.png */,
 				DE16EBA716142663001BB805 /* Icon@2x.png */,
 				DE16EBA51614265D001BB805 /* Icon.png */,
 				DE16EB9A16140C92001BB805 /* LUNavBackButton.png */,
@@ -401,6 +407,8 @@
 				DE16EBA61614265D001BB805 /* Icon.png in Resources */,
 				DE16EBA816142663001BB805 /* Icon@2x.png in Resources */,
 				DE4708DF16194688003B06B0 /* Lookup.entitlements in Resources */,
+				4A21EE7A161A02BC0066B26C /* LUTableSectionHeader.png in Resources */,
+				4A21EE7B161A02BC0066B26C /* LUTableSectionHeader@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

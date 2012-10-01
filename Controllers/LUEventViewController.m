@@ -14,6 +14,7 @@
 #import "LUTheme.h"
 
 #define ROW_HEIGHT 70.f
+#define SECTION_HEADER_HEIGHT 30.f
 
 @interface LUEventViewController ()
 
@@ -98,14 +99,6 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    NSString *name = [[self.fetchedResultsController.sections objectAtIndex:section] name];
-    
-	return [name isEqualToString:@"1"] ? @"Events with photos" : @"Events without photos";
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
     return nil;
@@ -131,6 +124,33 @@
     NSLog(@"Event = %@", obj);
     
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, SECTION_HEADER_HEIGHT)];
+    headerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LUTableSectionHeader"]];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectInset(headerView.bounds, 20, 4)];
+    CGRect labelFrame = headerLabel.frame;
+    labelFrame.origin.y = 2;
+    headerLabel.frame = labelFrame;
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.font = [UIFont boldSystemFontOfSize:14.f];
+    headerLabel.textAlignment = UITextAlignmentLeft;
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.shadowColor = [UIColor darkGrayColor];
+    headerLabel.shadowOffset = CGSizeMake(0,-1);
+    headerLabel.text = (section == 0) ? @"Events with photos" : @"Events without photos";
+    [headerView addSubview:headerLabel];
+    
+    return headerView;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return SECTION_HEADER_HEIGHT;
 }
 
 @end
