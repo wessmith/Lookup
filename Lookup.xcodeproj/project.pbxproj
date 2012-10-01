@@ -44,6 +44,7 @@
 		DE1A8A6E160ED2F60046B8FD /* LULoginButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A6C160ED2F60046B8FD /* LULoginButtonHighlighted.png */; };
 		DE1A8A6F160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */; };
 		DE1A8A72160F64FE0046B8FD /* LUGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */; };
+		DE4708DF16194688003B06B0 /* Lookup.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = DE4708DE16194688003B06B0 /* Lookup.entitlements */; };
 		DE67486A16113BF90027C6E0 /* LUEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE67486916113BF90027C6E0 /* LUEventTableViewCell.m */; };
 		DEB0968E161289AD00C04795 /* NetworkPhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB0968D161289AC00C04795 /* NetworkPhotoAlbumViewController.m */; };
 		DEECD999160E247E00DDD752 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEECD998160E247E00DDD752 /* UIKit.framework */; };
@@ -109,6 +110,9 @@
 		DE1A8A6D160ED2F60046B8FD /* LULoginButtonHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LULoginButtonHighlighted@2x.png"; sourceTree = "<group>"; };
 		DE1A8A70160F64FE0046B8FD /* LUGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUGroupViewController.h; sourceTree = "<group>"; };
 		DE1A8A71160F64FE0046B8FD /* LUGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUGroupViewController.m; sourceTree = "<group>"; };
+		DE4708DE16194688003B06B0 /* Lookup.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Lookup.entitlements; path = Lookup/Lookup.entitlements; sourceTree = "<group>"; };
+		DE4708E016194A6D003B06B0 /* MUOAuth2Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MUOAuth2Client.h; path = Vendor/MUOAuth2Client/MUOAuth2Client/src/MUOAuth2Client.h; sourceTree = "<group>"; };
+		DE4708E116194A76003B06B0 /* NSString+Query.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Query.h"; path = "Vendor/MUOAuth2Client/MUOAuth2Client/src/NSString+Query.h"; sourceTree = "<group>"; };
 		DE67486816113BF90027C6E0 /* LUEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LUEventTableViewCell.h; path = Views/LUEventTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		DE67486916113BF90027C6E0 /* LUEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LUEventTableViewCell.m; path = Views/LUEventTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		DEB0968C161289AC00C04795 /* NetworkPhotoAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkPhotoAlbumViewController.h; sourceTree = "<group>"; };
@@ -168,6 +172,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		4AF2CE3A1619DFCA00316ABE /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				DE4708E116194A76003B06B0 /* NSString+Query.h */,
+				DE4708E016194A6D003B06B0 /* MUOAuth2Client.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
 		DE1A8A56160EB6790046B8FD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +233,7 @@
 				DEECD997160E247E00DDD752 /* Frameworks */,
 				DEECD995160E247E00DDD752 /* Products */,
 				376DB20CA1324F1CAF3CC628 /* Pods.xcconfig */,
+				DE4708DE16194688003B06B0 /* Lookup.entitlements */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +248,7 @@
 		DEECD997160E247E00DDD752 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AF2CE3A1619DFCA00316ABE /* Headers */,
 				DE02C3C0160E630A00BF6AAF /* libMUOAuth2Client.a */,
 				DEECDA30160E460400DDD752 /* CoreData.framework */,
 				DEECD998160E247E00DDD752 /* UIKit.framework */,
@@ -385,6 +400,7 @@
 				DE16EB9D16140C92001BB805 /* LUNavBackButton@2x.png in Resources */,
 				DE16EBA61614265D001BB805 /* Icon.png in Resources */,
 				DE16EBA816142663001BB805 /* Icon@2x.png in Resources */,
+				DE4708DF16194688003B06B0 /* Lookup.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,10 +545,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 376DB20CA1324F1CAF3CC628 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Lookup/Lookup.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lookup/Lookup-Prefix.pch";
 				INFOPLIST_FILE = "Lookup/Lookup-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -542,10 +561,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 376DB20CA1324F1CAF3CC628 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Lookup/Lookup.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lookup/Lookup-Prefix.pch";
 				INFOPLIST_FILE = "Lookup/Lookup-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
