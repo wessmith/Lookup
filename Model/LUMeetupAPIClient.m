@@ -91,6 +91,7 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
         NSDictionary *params = @{
             @"group_id" : groupID,
             @"status" : @"past",
+            @"fields" : @"photo_count",
             @"access_token" : self.credential.accessToken
         };
         
@@ -163,7 +164,7 @@ static NSString *const kMeetupAPIBaseURLString = @"https://api.meetup.com/2/";
         // Photo link
         [mutablePropertyValues setValue:[representation valueForKey:@"photo_link"] forKey:@"photoLink"];
     }
-    //NSLog(@"Properties: %@", mutablePropertyValues);
+    NSLog(@"Properties: %@", mutablePropertyValues);
     
     return mutablePropertyValues;
 }
