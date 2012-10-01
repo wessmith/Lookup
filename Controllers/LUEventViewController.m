@@ -28,13 +28,14 @@
 - (void)setupFetchedResultsController
 {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"time" ascending:NO]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"hasPhotos" ascending:NO],
+                                    [NSSortDescriptor sortDescriptorWithKey:@"time" ascending:NO]];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"group.groupID=%@", self.group.groupID];
     
     NSManagedObjectContext *context = [(id)[UIApplication sharedApplication].delegate managedObjectContext];
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                         managedObjectContext:context
-                                                                          sectionNameKeyPath:nil
+                                                                          sectionNameKeyPath:@"hasPhotos"
                                                                                    cacheName:nil];
     self.fetchedResultsController.delegate = self;
     [self fetchData];
@@ -94,6 +95,20 @@
     
     eventCell.nameLabel.text = event.name;
     [eventCell setTime:event.time];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *name = [[self.fetchedResultsController.sections objectAtIndex:section] name];
+    
+	return [name isEqualToString:@"1"] ? @"Events with photos" : @"Events without photos";
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return nil;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
