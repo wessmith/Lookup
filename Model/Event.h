@@ -2,7 +2,7 @@
 //  Event.h
 //  Lookup
 //
-//  Created by Wesley Smith on 9/25/12.
+//  Created by Wesley Smith on 10/1/12.
 //  Copyright (c) 2012 Wesley Smith. All rights reserved.
 //
 
@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * photoCount;
 @property (nonatomic, retain) NSDate * time;
+@property (nonatomic, retain) NSNumber * hasPhotos;
 @property (nonatomic, retain) Group *group;
 @property (nonatomic, retain) NSSet *photos;
 @end
