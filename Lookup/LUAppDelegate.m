@@ -9,6 +9,8 @@
 #import "LUAppDelegate.h"
 #import "LUIncrementalStore.h"
 
+static NSString *const kStoreName = @"Lookup.sqlite";
+
 @implementation LUAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -59,6 +61,23 @@
     }
 }
 
+- (void)purgeUserData
+{
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kStoreName];
+    
+    NSFileManager *defaultManager = [NSFileManager defaultManager];
+    [defaultManager fileExistsAtPath:storeURL.path];
+    
+    NSError *error = nil;
+    [defaultManager removeItemAtURL:storeURL error:&error];
+    if (error) NSLog(@"Failed to delete database: \n%@", error);
+    
+    _managedObjectContext = nil;
+    _managedObjectModel = nil;
+    _persistentStoreCoordinator = nil;
+    [self managedObjectContext];
+}
+
 #pragma mark - Core Data stack
 
 // Returns the managed object context for the application.
@@ -101,7 +120,7 @@
     
     AFIncrementalStore *incrementalStore = (AFIncrementalStore *)[_persistentStoreCoordinator addPersistentStoreWithType:[LUIncrementalStore type] configuration:nil URL:nil options:nil error:nil];
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Lookup.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kStoreName];
     
     NSDictionary *options = @{
         NSMigratePersistentStoresAutomaticallyOption : @(YES),
@@ -119,7 +138,7 @@
         abort();
     }
     
-    NSLog(@"SQLite URL: %@", [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Lookup.sqlite"]);
+    NSLog(@"SQLite URL: %@", [[self applicationDocumentsDirectory] URLByAppendingPathComponent:kStoreName]);
     
     return _persistentStoreCoordinator;
 }

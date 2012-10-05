@@ -13,6 +13,7 @@
 #import "LUGroupTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "LUTheme.h"
+#import "LUAppDelegate.h"
 
 #define ROW_HEIGHT 70.f
 
@@ -122,6 +123,10 @@ static NSString *const kClientID = @"ojtt0avlqe41hq4or07ovdforp";
 {
     // Forget the credential.
     [[MUOAuth2Client sharedClient] forgetCredentialWithClientID:kClientID];
+    
+    // Delete the user's data.
+    LUAppDelegate *appDelegate = (id)[UIApplication sharedApplication].delegate;
+    [appDelegate purgeUserData];
     
     [self presentLoginViewAnimated:YES];
 }
