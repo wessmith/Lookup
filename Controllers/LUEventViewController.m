@@ -141,7 +141,15 @@
     headerLabel.textColor = [UIColor whiteColor];
     headerLabel.shadowColor = [UIColor darkGrayColor];
     headerLabel.shadowOffset = CGSizeMake(0,-1);
-    headerLabel.text = (section == 0) ? @"Events with photos" : @"Events without photos";
+    
+    // Figure out the correct title for the section.
+    NSString *value = [[self.fetchedResultsController.sections objectAtIndex:section] name];
+    if ([value isEqualToString:@"0"]) {
+       headerLabel.text = @"Events without photos";
+    } else {
+       headerLabel.text = @"Events with photos"; 
+    }
+    
     [headerView addSubview:headerLabel];
     
     return headerView;
