@@ -44,10 +44,10 @@
 {
     MUOAuth2Client *client = [MUOAuth2Client sharedClient];
 
-    #warning Remove the Client Key, Secret, etc before pushing to GitHub.    
-    [client authorizeClientWithID:@"ojtt0avlqe41hq4or07ovdforp"
-                           secret:@"pcj2umuk3igeugcor9ppaqpv3o"
-                      redirectURI:@"lookup://oauth2" success:^(MUOAuth2Credential *credential) {
+    #error Enter you consumer details here:    
+    [client authorizeClientWithID:@"<YOUR_KEY>"
+                           secret:@"<YOUR_SECRET"
+                      redirectURI:@"YOUR_REDIRECT_URI" success:^(MUOAuth2Credential *credential) {
         
                           NSLog(@"\nNew Credential: \n%@\n", [credential description]);
                           
